@@ -1,0 +1,19 @@
+// @use '../../app/globals.scss' as *;
+
+.milestonesSection {
+  padding: 4rem 3rem 1rem;
+  background-color: #fff;
+  text-align: center;
+
+  .imageWrapper {
+    margin-top: 0rem;
+    display: flex;
+    justify-content: center;
+    
+    .milestoneImage {
+      width: auto;
+      height: 430px;
+      object-fit: contain;
+    }
+  }
+}

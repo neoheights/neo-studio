@@ -1,0 +1,110 @@
+.trustedSection {
+  padding: 4% 7%;
+  // background-color: #000;
+  // color: #fff;
+  text-align: center;
+  overflow: hidden;
+  // border-bottom: 1px solid #333;
+
+  @media (max-width: 768px) {
+    padding: 12% 5% 7%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.heading {
+  font-size: 1.3rem;
+  font-weight: 600;
+  // color: var(--text-secondary);
+  margin-bottom: 50px;
+
+  @media (max-width: 768px) {
+    width: 50%;
+    font-size: 0.75rem;
+
+    margin-bottom: 30px;
+  }
+}
+
+.slider {
+  height: 80px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+
+  // &::before,
+  // &::after {
+  //   background: linear-gradient(to right,
+  //       rgb(255, 255, 255) 0%,
+  //       rgba(255, 255, 255, 0) 100%);
+  //   content: "";
+  //   height: 100%;
+  //   position: absolute;
+  //   width: 150px;
+  //   z-index: 2;
+  // }
+
+  &::before {
+    left: 0;
+    top: 0;
+  }
+
+  &::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+  }
+}
+
+.slideTrack {
+  display: flex;
+  width: calc(200px * 21); // 7 logos × 3 sets
+  animation: scroll 40s linear infinite;
+}
+
+.slide {
+  width: 200px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    width: 100px;
+    height: 60px;
+  }
+}
+
+/* ✅ NEW: Image styling */
+.logo {
+  max-width: 120px;
+  max-height: 60px;
+  object-fit: contain;
+  // opacity: 0.95;
+  // filter: grayscale(100%);
+  transition: all 0.3s ease;
+
+  &:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+  }
+  
+  @media (max-width: 768px) {
+    max-width: 50px;
+    max-height: 40px;
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-200px * 7)); // move one full set
+  }
+}

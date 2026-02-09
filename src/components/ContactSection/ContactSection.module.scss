@@ -1,0 +1,208 @@
+// @use '../../app/globals.scss' as *;
+
+.contactSection {
+  padding: 4rem 3rem;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 95vh; // almost full viewport height on laptops
+
+  .container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 3rem;
+    }
+
+    .formColumn {
+      flex: 1;
+      background: #fff;
+      border: 3px solid #000;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 6px 6px 0 #000; // offset black drop for bold card look
+
+      .formTitle {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+      }
+
+      .formSubtitle {
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+        margin-bottom: 2rem;
+      }
+
+      .form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        .inputGroup {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+
+          label {
+            font-size: 0.9rem;
+            font-weight: 600;
+          }
+
+          input, .select {
+            padding: 1rem;
+            border: 2px solid #000;
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+
+            &:focus {
+              border-color: #000;
+            }
+          }
+        }
+
+        .checkboxGroup {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          font-size: 0.9rem;
+        }
+
+        .submitButton {
+          background-color: #D4D433;
+          color: #000;
+          border: 2px solid #000;
+          padding: 1rem;
+          font-weight: 700;
+          font-size: 1rem;
+          cursor: pointer;
+          border-radius: 10px;
+          transition: background-color 0.2s;
+          box-shadow: 6px 6px 0 #000;
+
+          &:hover {
+            background-color: darken(#D4D433, 10%);
+          }
+        }
+
+        .disclaimer {
+          font-size: 0.75rem;
+          color: var(--text-secondary);
+          line-height: 1.4;
+        }
+      }
+    }
+
+    .infoColumn {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .infoTitle {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        line-height: 1.2;
+      }
+
+      .roomCard {
+        position: relative;
+        height: 420px;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+
+        .roomImage {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .brandChip {
+          position: absolute;
+          top: 16px;
+          left: 16px;
+          background: rgba(255,255,255,0.9);
+          padding: 0.5rem 0.75rem;
+          border-radius: 8px;
+          display: flex;
+          gap: 0.5rem;
+          align-items: center;
+          font-weight: 600;
+
+          .brandName {
+            color: #001f5f;
+          }
+
+          .brandTag {
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 0.8rem;
+          }
+        }
+
+        .mapOverlay {
+          position: absolute;
+          bottom: 16px;
+          left: 16px;
+          right: 16px;
+          background: rgba(255, 255, 255, 0.92);
+          padding: 1rem;
+          border-radius: 14px;
+          display: flex;
+          flex-direction: column;
+          gap: 0.75rem;
+          backdrop-filter: blur(4px);
+
+          .mapBox {
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.1);
+
+            img {
+              width: 100%;
+              height: 180px;
+              object-fit: cover;
+              display: block;
+            }
+          }
+
+          .contactRow {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #fff;
+            border-radius: 10px;
+            padding: 0.75rem 1rem;
+            border: 1px solid rgba(0,0,0,0.1);
+
+            .contactItem {
+              display: flex;
+              align-items: center;
+              gap: 0.75rem;
+              font-size: 0.95rem;
+              font-weight: 500;
+              
+              span {
+                  color: var(--black-color);
+              }
+            }
+
+            .rightArrow {
+              color: var(--black-color);
+            }
+          }
+        }
+      }
+    }
+  }
+}

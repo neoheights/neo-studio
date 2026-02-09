@@ -1,0 +1,214 @@
+.legacySection {
+    padding: 3% 6%;
+    background-color: #fafafa; // Slight off-white background as per clean design
+    color: #000;
+
+    @media (max-width: 768px) {
+        padding: 8%;
+    }
+}
+
+.container {
+    display: flex;
+    gap: 80px;
+    align-items: center;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        gap: 50px;
+    }
+}
+
+.imageWrapper {
+    flex: 1.2;
+    position: relative;
+    border-radius: 4px; // Minimal rounding
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); // Subtle shadow
+    // Aspect ratio control if needed, but Image component handles it
+
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.legacyImage {
+    width: 100%;
+    height: 85vh;
+    display: block;
+    object-fit: cover;
+
+    @media (max-width: 768px) {
+        height: 55vh;
+    }
+}
+
+.quoteCard {
+    position: absolute;
+    bottom: 45px;
+    left: 50px;
+    right: 50px;
+    background: linear-gradient(to right, #c9c6c3, #787674, #8c7665); // Dark background
+    backdrop-filter: blur(8px);
+    padding: 25px;
+    border-radius: 20px;
+    color: #fff;
+    display: flex;
+    gap: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+    @media (max-width: 768px) {
+        padding: 15px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        border-radius: 0px;
+    }
+}
+
+.quoteIcon {
+    color: #FF6B00; // Primary Orange
+    transform: rotate(180deg);
+    // The icon from Lucide is a standard quote.
+}
+
+.quoteTextWrap {}
+
+.quoteText {
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #FFF;
+    margin: 0 0 10px;
+
+    @media (max-width: 768px) {
+        font-size: 0.9rem;
+        margin: 0 0 7px;
+    }
+}
+
+.quoteAuthor {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #FFF;
+
+    @media (max-width: 768px) {
+        font-size: 0.75rem;
+    }
+}
+
+.contentWrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.mainLogo {
+    margin-bottom: 20px;
+
+    .logoImage {
+        object-fit: contain;
+        // Adjust width/height via prop or here
+        width: auto;
+        height: 100px;
+    }
+
+    @media (max-width: 768px) {
+        margin-bottom: 10px;
+
+        .logoImage {
+            height: 75px;
+        }
+    }
+}
+
+.title {
+    font-size: 2.4rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: var(--black-color);
+
+    @media (max-width: 768px) {
+        font-size: 1.5rem;
+    }
+}
+
+.description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--grey-1-color);
+    font-weight: 600;
+    margin-bottom: 40px;
+    max-width: 90%;
+
+    @media (max-width: 768px) {
+        max-width: 100%;
+        margin-bottom: 25px;
+
+        font-size: 0.9rem;
+        font-weight: 700;
+        line-height: 1.4;
+    }
+}
+
+.subLogos {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+
+    @media (max-width: 768px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1.25fr;
+    }
+}
+
+.subLogoItem {
+    background-color: var(--grey-color);
+    border-radius: 12px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 150px;
+    height: 70px;
+
+    .subLogoImg {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        // mix-blend-mode: multiply; // Optional if logos have white bg
+    }
+
+    @media (max-width: 768px) {
+        height: 50px;
+        border-radius: 8px;
+
+        min-width: 0;
+        padding: 10px;
+    }
+}
+
+.learnMoreLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--primary-orange);
+    font-weight: 800;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: gap 0.3s ease;
+
+    &:hover {
+        gap: 12px;
+    }
+
+    @media (max-width: 768px) {
+        font-weight: 0.75rem;
+    }
+}

@@ -1,0 +1,83 @@
+.partnersSection {
+  padding: 6rem 8rem 1.5rem;
+  background-color: #fff;
+
+  .topRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4rem;
+    gap: 4rem;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .textColumn {
+      flex: 1.5;
+      max-width: 700px;
+
+      .title {
+        font-size: 3rem;
+
+        font-family: "Beau Rivage", cursive;
+        font-weight: 400;
+
+        background-image: url("../../assets/images/partner/partner_text.jpg"); // your image path
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+      }
+
+      .description {
+        font-size: 1rem;
+        color: var(--black-color);
+        line-height: 1.5;
+      }
+    }
+
+    .logoColumn {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+
+      .partnerLogo {
+        width: auto;
+        height: 50px;
+        object-fit: contain;
+      }
+    }
+  }
+
+  .imageRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+
+    .imageWrapper {
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+
+      .partnerImage {
+        width: 100%;
+        height: 330px;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+}
