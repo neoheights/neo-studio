@@ -18,14 +18,14 @@ export default function Services() {
 
   const servicesData = {
     Residential: [
-      { id: 1, title: 'Economy', image: dummyImage },
-      { id: 2, title: 'Elite', image: dummyImage },
-      { id: 3, title: 'Luxe', image: dummyImage },
+      { id: 1, title: 'Economy', image: require('@/assets/images/services/img4.jpg') },
+      { id: 2, title: 'Elite', image: require('@/assets/images/services/img5.jpg') },
+      { id: 3, title: 'Luxe', image: require('@/assets/images/services/img6.jpg') },
     ],
     Commercial: [
-      { id: 4, title: 'Office', image: dummyImage },
-      { id: 5, title: 'Retail', image: dummyImage },
-      { id: 6, title: 'Hospitality', image: dummyImage },
+      { id: 4, title: 'Industrial', image: require('@/assets/images/services/img1.jpg') },
+      { id: 5, title: 'Retail', image: require('@/assets/images/services/img2.jpg') },
+      { id: 6, title: 'Workspaces', image: require('@/assets/images/services/img3.jpg') },
     ]
   };
 
@@ -64,7 +64,13 @@ export default function Services() {
       <div className={styles.gridContainer}>
         {servicesData[activeTab].map((item) => (
           <div key={item.id} className={styles.card}>
-            <img src={item.image} alt={item.title} className={styles.image} />
+            <Image
+              src={item.image}
+              width={1000}
+              height={1000}
+              className={styles.cardImage}
+              alt="service"
+            />
             <div className={styles.cardLabel}>
               {item.title}
             </div>

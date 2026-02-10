@@ -11,10 +11,28 @@
     width: 100%;
     padding: 0 0rem 0 2rem;
 
-    background-color: var(--grey-3-color); // Light grey background for the card
+    background-color: var(--grey-3-color);
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+
+    position: relative; // required for pseudo element
+    z-index: 1;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+
+      background-image: url('../../assets/images/EndToEnd/endBg.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      transform: scaleX(-1); // Flip right to left
+      opacity: 0.05; // Reduce background opacity
+      z-index: -1;
+    }
   }
 
   .contentWrapper {

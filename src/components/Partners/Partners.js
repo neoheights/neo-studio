@@ -33,21 +33,27 @@ const Partners = () => {
       <div className={styles.imageRow}>
         <div className={styles.imageWrapper}>
           <Image
-            src={require('@/assets/images/Hero/BG.png')}
+            src={require('@/assets/images/partner/partner1.png')}
             alt="Wardrobe Design" 
             className={styles.partnerImage} 
             width={1000}
             height={1000}
           />
+          <div className={styles.hoverWrap}>
+            <h6>TheNeoStudio X Astronea</h6>
+          </div>
         </div>
         <div className={styles.imageWrapper}>
           <Image
-            src={require('@/assets/images/Hero/BG.png')}
+            src={require('@/assets/images/partner/partner2.png')}
             alt="Kitchen Design" 
             className={styles.partnerImage} 
             width={1000}
             height={1000}
           />
+          <div className={styles.hoverWrap}>
+            <h6>TheNeoStudio X Schuller</h6>
+          </div>
         </div>
       </div>
     </section>

@@ -3,16 +3,15 @@
 import { useState } from 'react';
 import SectionHeader from '../SectionHeader/SectionHeader';
 import styles from './Crafted.module.scss';
+import Image from 'next/image';
 
 const dummyImages = [
-  "https://images.unsplash.com/photo-1616137466211-f939a420be84?q=80&w=2000&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1616137466211-f939a420be84?q=80&w=2000&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=2000&auto=format&fit=crop"
+  require('@/assets/images/Hero/BG-1.png'),
+  require('@/assets/images/Hero/BG-1.png'),
+  require('@/assets/images/Hero/BG-1.png')
 ];
 
 export default function Crafted() {
-  const [activeImage, setActiveImage] = useState(dummyImages[0]);
-
   const items = [
     {
       id: 1,
@@ -36,7 +35,7 @@ export default function Crafted() {
 
   return (
     <section className={styles.craftedSection} id="crafted-section">
-      <SectionHeader 
+      <SectionHeader
         title="Great Spaces are Crafted with Skill, Passion, and Attention to Detail."
         description="From initial design support to final delivery, our complete business model ensures excellence at every stage of the project lifecycle."
         buttonText="Discover more"
@@ -45,20 +44,28 @@ export default function Crafted() {
 
       <div className={styles.contentContainer}>
         <div className={styles.listWrapper}>
-          {items.map((item) => (
-            <div 
-              key={item.id} 
-              className={styles.listItem}
-              onMouseEnter={() => setActiveImage(item.image)}
+          {items.map((item, idx) => (
+            <div
+              key={item.id}
+              className={styles.listItemWrap}
             >
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
+              <div
+                className={styles.listItem}
+              >
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </div>
+              <div className={styles.imageWrapper}>
+                <Image
+                  src={item.image}
+                  alt="Interior Design"
+                  className={styles.displayImage}
+                  width={1000}
+                  height={1000}
+                />
+              </div>
             </div>
           ))}
-        </div>
-
-        <div className={styles.imageWrapper}>
-           <img src={activeImage} alt="Interior Design" className={styles.displayImage} />
         </div>
       </div>
     </section>
