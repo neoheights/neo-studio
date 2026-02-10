@@ -24,6 +24,13 @@ import logo20 from "@/assets/images/trustedPartners/img20.png";
 import logo21 from "@/assets/images/trustedPartners/img21.png";
 import logo22 from "@/assets/images/trustedPartners/img22.png";
 import logo23 from "@/assets/images/trustedPartners/img23.png";
+import logo24 from "@/assets/images/trustedPartners/img24.png";
+import logo25 from "@/assets/images/trustedPartners/img25.png";
+import logo26 from "@/assets/images/trustedPartners/img26.png";
+import logo27 from "@/assets/images/trustedPartners/img27.png";
+import logo28 from "@/assets/images/trustedPartners/img28.png";
+import logo29 from "@/assets/images/trustedPartners/img29.png";
+import logo30 from "@/assets/images/trustedPartners/img30.png";
 
 const TrustedBy = () => {
   const logos = [
@@ -50,6 +57,13 @@ const TrustedBy = () => {
     { src: logo21, alt: "Ashok Leyland" },
     { src: logo22, alt: "Ashok Leyland" },
     { src: logo23, alt: "Ashok Leyland" },
+    { src: logo24, alt: "Ashok Leyland" },
+    { src: logo25, alt: "Ashok Leyland" },
+    { src: logo26, alt: "Ashok Leyland" },
+    { src: logo27, alt: "Ashok Leyland" },
+    { src: logo28, alt: "Ashok Leyland" },
+    { src: logo29, alt: "Ashok Leyland" },
+    { src: logo30, alt: "Ashok Leyland" },
   ];
 
   return (
