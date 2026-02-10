@@ -22,7 +22,7 @@ const sfProDisplay = localFont({
     { path: "../assets/fonts/SFPro/SFPRODISPLAYULTRALIGHTITALIC.otf", weight: "200", style: "italic" },
     { path: "../assets/fonts/SFPro/SFPRODISPLAYLIGHTITALIC.otf", weight: "300", style: "italic" },
 
-    { path: "../assets/fonts/SFPro/SFPRODISPLAYREGULAR.otf", weight: "400", style: "normal" },
+    // { path: "../assets/fonts/SFPro/SFPRODISPLAYREGULAR.otf", weight: "400", style: "normal" },
     { path: "../assets/fonts/SFPro/SFPRODISPLAYMEDIUM.otf", weight: "500", style: "normal" },
 
     { path: "../assets/fonts/SFPro/SFPRODISPLAYSEMIBOLDITALIC.otf", weight: "600", style: "italic" },
