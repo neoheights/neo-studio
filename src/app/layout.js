@@ -18,18 +18,18 @@ const bdoGrotesk = localFont({
 
 const sfProDisplay = localFont({
   src: [
-    { path: "../assets/fonts/SFPro/SFPRODISPLAYTHINITALIC.otf", weight: "100", style: "italic" },
-    { path: "../assets/fonts/SFPro/SFPRODISPLAYULTRALIGHTITALIC.otf", weight: "200", style: "italic" },
-    { path: "../assets/fonts/SFPro/SFPRODISPLAYLIGHTITALIC.otf", weight: "300", style: "italic" },
+    { path: "../assets/fonts/SFPro/SF-Pro-Display-ThinItalic.otf", weight: "100", style: "italic" },
+    { path: "../assets/fonts/SFPro/SF-Pro-Display-UltralightItalic.otf", weight: "200", style: "italic" },
+    { path: "../assets/fonts/SFPro/SF-Pro-Display-LightItalic.otf", weight: "300", style: "italic" },
 
-    // { path: "../assets/fonts/SFPro/SFPRODISPLAYREGULAR.otf", weight: "400", style: "normal" }, 
-    { path: "../assets/fonts/SFPro/SFPRODISPLAYMEDIUM.otf", weight: "500", style: "normal" },
+    { path: "../assets/fonts/SFPro/SF-Pro-Display-Regular.otf", weight: "400", style: "normal" },
+    { path: "../assets/fonts/SFPro/SF-Pro-Display-Medium.otf", weight: "500", style: "normal" },
 
-    { path: "../assets/fonts/SFPro/SFPRODISPLAYSEMIBOLDITALIC.otf", weight: "600", style: "italic" },
-    { path: "../assets/fonts/SFPro/SFPRODISPLAYBOLD.otf", weight: "700", style: "normal" },
+    { path: "../assets/fonts/SFPro/SF-Pro-Display-SemiboldItalic.otf", weight: "600", style: "italic" },
+    { path: "../assets/fonts/SFPro/SF-Pro-Display-Bold.otf", weight: "700", style: "normal" },
 
-    { path: "../assets/fonts/SFPro/SFPRODISPLAYHEAVYITALIC.otf", weight: "800", style: "italic" },
-    { path: "../assets/fonts/SFPro/SFPRODISPLAYBLACKITALIC.otf", weight: "900", style: "italic" },
+    { path: "../assets/fonts/SFPro/SF-Pro-Display-HeavyItalic.otf", weight: "800", style: "italic" },
+    { path: "../assets/fonts/SFPro/SF-Pro-Display-BlackItalic.otf", weight: "900", style: "italic" },
   ],
   variable: "--font-sf",
   display: "swap",
