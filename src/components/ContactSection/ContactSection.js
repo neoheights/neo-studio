@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import { Mail, Phone, ArrowRight } from 'lucide-react';
 import styles from './ContactSection.module.scss';
+import Image from 'next/image';
+import BGImage from '@/assets/images/Hero/BG-1.png';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -28,41 +30,41 @@ const ContactSection = () => {
   return (
     <section className={styles.contactSection}>
       <div className={styles.container}>
-        
+
         <div className={styles.formColumn}>
           <h2 className={styles.formTitle}>Talk to Designer</h2>
           <p className={styles.formSubtitle}>Enter your email below to login to your account</p>
-          
+
           <form onSubmit={handleSubmit} className={styles.form}>
             <div className={styles.inputGroup}>
               <label>Name *</label>
-              <input 
-                type="text" 
-                name="name" 
-                placeholder="Name" 
+              <input
+                type="text"
+                name="name"
+                placeholder="Name"
                 value={formData.name}
                 onChange={handleChange}
-                required 
+                required
               />
             </div>
 
             <div className={styles.inputGroup}>
               <label>Phone Number *</label>
-              <input 
-                type="tel" 
-                name="phone" 
-                placeholder="Enter Phone number" 
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Enter Phone number"
                 value={formData.phone}
                 onChange={handleChange}
-                required 
+                required
               />
             </div>
 
             <div className={styles.inputGroup}>
               <label>Property City</label>
-              <select 
-                name="city" 
-                value={formData.city} 
+              <select
+                name="city"
+                value={formData.city}
                 onChange={handleChange}
                 className={styles.select}
               >
@@ -74,9 +76,9 @@ const ContactSection = () => {
             </div>
 
             <div className={styles.checkboxGroup}>
-              <input 
-                type="checkbox" 
-                id="whatsapp" 
+              <input
+                type="checkbox"
+                id="whatsapp"
                 name="whatsapp"
                 checked={formData.whatsapp}
                 onChange={handleChange}
@@ -96,27 +98,31 @@ const ContactSection = () => {
 
         <div className={styles.infoColumn}>
           <h2 className={styles.infoTitle}>
-            Don’t wait another day to create the home you’ve always wanted
+            We take total ownership of your project, so you can take pride in your home.
           </h2>
-          
+
           <div className={styles.roomCard}>
-            <img 
-              src="https://images.unsplash.com/photo-1556912173-3db9963f6f02?q=80&w=1200&auto=format&fit=crop" 
-              alt="Living Room" 
-              className={styles.roomImage} 
+            <Image
+              alt="Neo studio"
+              src={require('@/assets/images/Hero/BG-1.png')}
+              className={styles.roomImage}
+              width={1000}
+              height={1000}
             />
 
             <div className={styles.brandChip}>
-              <span className={styles.brandName}>Neo Studio</span>
-              <span className={styles.brandTag}>Where Space Turn into Stories</span>
+              <Image
+                alt="Neo studio"
+                src={require('@/assets/images/legacy/neo_studio_logo.png')}
+                className={styles.brandChipImage}
+                width={1000}
+                height={1000}
+              />
             </div>
 
             <div className={styles.mapOverlay}>
               <div className={styles.mapBox}>
-                <img 
-                  src="https://maps.googleapis.com/maps/api/staticmap?center=HSR%20Layout,Bangalore&zoom=13&size=600x300&maptype=roadmap&markers=color:red%7Clabel:S%7CHSR%20Layout,Bangalore" 
-                  alt="HSR Layout Map" 
-                />
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7964410.518251855!2d67.89334352499998!3d12.915926599999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1575543f8845%3A0x8a842fc904ab53cc!2sThe%20Neo%20Studio!5e0!3m2!1sen!2sin!4v1770741569344!5m2!1sen!2sin" width={600} height={450} style={{ border: 0 }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
               </div>
 
               <div className={styles.contactRow}>

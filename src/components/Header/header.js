@@ -45,7 +45,7 @@ export default function Header() {
         <Image
           src={require('@/assets/images/logo.png')}
           alt="Neo_studio"
-          className={styles.logo}
+          className={`${styles.logo} ${isScrolled ? styles.logoOpen : ''}`}
           width={200}
           height={200}
         />

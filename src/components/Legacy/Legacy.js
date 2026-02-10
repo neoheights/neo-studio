@@ -9,7 +9,7 @@ import LeftSideImage from '@/assets/images/legacy/left_side_image.png';
 import ArulGrpLogo from '@/assets/images/legacy/arul_group_log.png';
 import Arul_1997 from '@/assets/images/legacy/arul_1997.png';
 import Arul_1998 from '@/assets/images/legacy/arul_1998.png';
-import NeoStuidoLogo from '@/assets/images/legacy/neo_studio_logo.png';
+import NeoHeightLogo from '@/assets/images/legacy/neo_heights_logo.png';
 
 const Legacy = () => {
     return (
@@ -60,7 +60,7 @@ const Legacy = () => {
                             <Image src={Arul_1998} alt="Arul Rubbers" className={styles.subLogoImg} />
                         </div>
                         <div className={styles.subLogoItem}>
-                            <Image src={NeoStuidoLogo} alt="Neo Studio" className={styles.subLogoImg} />
+                            <Image src={NeoHeightLogo} alt="Neo Studio" className={styles.subLogoImg} />
                         </div>
                     </div>
 

@@ -30,6 +30,8 @@ export default function Hero() {
 
   return (
     <section className={styles.heroSection}>
+      <div className={styles.overlayContainer}></div>
+
       {/* Background Carousel */}
       <div className={styles.backgroundCarousel}>
         {images.map((img, index) => (
@@ -45,8 +47,8 @@ export default function Hero() {
       <div className={styles.content}>
         <h1>Timeless Interiors.<br />Crafted for You.</h1>
         <p>
-          As premier interior designers in Bangalore, we blend engineering excellence with bespoke 
-          aesthetics to transform your space into a beautiful room you&apos;ll love specializing in high-end 2 
+          As premier interior designers in Bangalore, we blend engineering excellence with bespoke
+          aesthetics to transform your space into a beautiful room you&apos;ll love specializing in high-end 2
           BHK interior design and luxury 3 BHK flat interior design.
         </p>
         <button className={styles.ctaButton}>Get Free Quote</button>
@@ -61,16 +63,16 @@ export default function Hero() {
           </div>
           <div className={styles.verticalsList}>
             <div className={styles.verticalItem} title="Vertical 1">
-               <Home size={24} />
+              <Home size={24} />
             </div>
             <div className={styles.verticalItem} title="Vertical 2">
-               <Box size={24} />
+              <Box size={24} />
             </div>
             <div className={styles.verticalItem} title="Vertical 3">
-               <Mountain size={24} />
+              <Mountain size={24} />
             </div>
             <div className={styles.verticalItem} title="Vertical 4">
-               <Building size={24} />
+              <Building size={24} />
             </div>
           </div>
         </div>
