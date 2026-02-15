@@ -57,7 +57,7 @@
       cursor: pointer;
       border-radius: 4px;
       transition: transform 0.2s, background-color 0.2s;
-      
+
       // Match image style: black border, maybe box shadow
       border: 2px solid #000;
       box-shadow: 4px 4px 0px #000;
@@ -66,10 +66,28 @@
         transform: translate(-2px, -2px);
         box-shadow: 6px 6px 0px #000;
       }
-      
+
       &:active {
         transform: translate(0, 0);
         box-shadow: 2px 2px 0px #000;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    height: 40vh;
+    min-height: 300px;
+
+    .content {
+      .heading {
+        font-size: 1.25rem;
+        margin-bottom: 1.25rem;
+      }
+
+      .ctaButton {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        font-weight: 600;
       }
     }
   }
