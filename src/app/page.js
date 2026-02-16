@@ -1,3 +1,11 @@
+import { Metadata } from "next";
+
+export const metadata = {
+  title: "Neo Studio",
+  description:
+    "Neo Studio offers end-to-end interior design solutions, transforming spaces with creativity, precision, and excellence.",
+};
+
 import Header from "../components/Header/header";
 import Hero from "../components/Hero/hero";
 import Services from "../components/Services/Services";
