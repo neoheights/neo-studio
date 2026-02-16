@@ -6,9 +6,9 @@ import styles from './Crafted.module.scss';
 import Image from 'next/image';
 
 const dummyImages = [
-  require('@/assets/images/Hero/BG-1.png'),
-  require('@/assets/images/Hero/BG-1.png'),
-  require('@/assets/images/Hero/BG-1.png')
+  require('@/assets/images/crafted/crafted1.jpg'),
+  require('@/assets/images/crafted/crafted2.jpg'),
+  require('@/assets/images/crafted/crafted3.jpg')
 ];
 
 export default function Crafted() {
@@ -34,7 +34,7 @@ export default function Crafted() {
   ];
 
   return (
-    <section className={styles.craftedSection} id="crafted-section">
+    <section className={styles.craftedSection} id="projects">
       <SectionHeader
         title="Great Spaces are Crafted with Skill, Passion, and Attention to Detail."
         description="From initial design support to final delivery, our complete business model ensures excellence at every stage of the project lifecycle."

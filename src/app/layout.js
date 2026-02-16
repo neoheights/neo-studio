@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
 import './globals.scss';
 import ThemeProvider from "@/components/ThemeProvider";
+import ContactPopup from "@/components/ContactPopup/ContactPopup";
 
 const bdoGrotesk = localFont({
   src: [
@@ -42,6 +43,7 @@ export default function RootLayout({ children }) {
         <ThemeProvider>
           {children}
         </ThemeProvider>
+        <ContactPopup />
       </body>
     </html>
   );

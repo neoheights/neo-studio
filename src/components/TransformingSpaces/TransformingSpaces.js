@@ -20,7 +20,7 @@ const TransformingSpaces = () => {
   ];
 
   return (
-    <section className={styles.transformingSection}>
+    <section className={styles.transformingSection} id="about">
       <SectionHeader
         title="Transforming spaces into beautiful rooms you'll love"
         description="From initial design support to final delivery, our complete business model ensures excellence at every stage of the project lifecycle."

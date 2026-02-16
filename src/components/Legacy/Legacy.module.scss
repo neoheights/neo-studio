@@ -24,8 +24,8 @@
     position: relative;
     border-radius: 4px; // Minimal rounding
     overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); // Subtle shadow
-    // Aspect ratio control if needed, but Image component handles it
+    border: 6.42px solid #000000;
+    box-shadow: #000000 #000000 0px 0px #000000;
 
     border-radius: 20px;
     overflow: hidden;
@@ -44,17 +44,17 @@
 
 .quoteCard {
     position: absolute;
-    bottom: 45px;
-    left: 50px;
-    right: 50px;
-    background: linear-gradient(to right, #c9c6c3, #787674, #8c7665); // Dark background
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: #00227C;
     backdrop-filter: blur(8px);
-    padding: 25px;
-    border-radius: 20px;
+    padding: 20px 20px 15px;
+    border-radius: 0px;
     color: #fff;
     display: flex;
     gap: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border-top: 6.42px solid var(--Border, #000000);
 
     @media (max-width: 768px) {
         padding: 15px;
@@ -75,8 +75,8 @@
 .quoteTextWrap {}
 
 .quoteText {
-    font-size: 1.15rem;
-    font-weight: 700;
+    font-size: 1.25rem;
+    font-weight: 300;
     line-height: 1.2;
     color: #FFF;
     margin: 0 0 10px;

@@ -10,6 +10,23 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
+  const scrollToSection = (id) => {
+    setIsDrawerOpen(false); // For mobile screens, close the navbar while clicking navbar element
+    const element = document.getElementById(id);
+    if (!element) return;
+
+    const offset = 120; // navbar height
+    const elementPosition =
+      element.getBoundingClientRect().top + window.pageYOffset;
+
+    const offsetPosition = elementPosition - offset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -28,12 +45,12 @@ export default function Header() {
   };
 
   const navLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'Projects', href: '/projects' },
-    { name: 'About', href: '/about' },
-    { name: 'Services', href: '/services' },
-    { name: 'Testimonials', href: '/testimonials' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'Home', href: 'home' },
+    { name: 'Projects', href: 'projects' },
+    { name: 'About', href: 'about' },
+    { name: 'Services', href: 'services' },
+    // { name: 'Testimonials', href: '/testimonials' },
+    { name: 'Contact', href: 'contact' },
   ];
 
   // Desktop nav usually shows fewer items
@@ -53,15 +70,15 @@ export default function Header() {
         <div className={styles.headerNavbar}>
           <nav className={styles.navDesktop}>
             {desktopNavLinks.map((link) => (
-              <Link key={link.name} href={link.href}>
-                {link.name}
-              </Link>
+              <a key={link.name}  >
+                <span role="presentation" onClick={() => scrollToSection(link.name.toLowerCase())}>{link.name}</span>
+              </a>
             ))}
           </nav>
 
           <button className={styles.menuButton} onClick={toggleDrawer}>
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5 30V26.6667H35V30H5ZM5 21.6667V18.3333H35V21.6667H5ZM5 13.3333V10H35V13.3333H5Z" fill="white" />
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 30V26.6667H35V30H5ZM5 21.6667V18.3333H35V21.6667H5ZM5 13.3333V10H35V13.3333H5Z" fill="currentColor" />
             </svg>
           </button>
         </div>
@@ -96,10 +113,10 @@ export default function Header() {
 
         <nav className={styles.drawerNav}>
           {navLinks.map((link) => (
-            <Link key={link.name} href={link.href} onClick={() => setIsDrawerOpen(false)}>
+            <a key={link.name} onClick={() => scrollToSection(link.href)}>
               {link.name}
               <ChevronRight className={styles.arrow} size={20} />
-            </Link>
+            </a>
           ))}
         </nav>
       </div>

@@ -1,37 +1,43 @@
 .servicesSection {
   padding: 4rem 3rem 0;
-  background: var(--foreground);
+  background: #F5F5F5;
   position: relative;
 
   .tabsContainer {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
-    margin: 2rem 0 3rem;
+    margin: 2rem 0;
     gap: 1rem;
     font-size: 1.2rem;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--black-color);
     width: 100%;
     position: relative;
 
+    border-bottom: 1px solid #DADADA;
+
     .centerTabs {
       display: flex;
-      gap: 2rem;
+      gap: 0rem;
     }
 
     .arrowWrapper {
-      position: absolute;
-      right: 0;
+      // position: absolute;
+      // right: 0;
     }
 
     .tabItem {
       cursor: pointer;
-      padding: 0.5rem 1rem;
+      padding: 0.5rem 2rem 1rem;
       transition: color 0.3s;
 
       &.active {
         color: var(--black-color);
+      }
+
+      &:first-child {
+        border-right: 1px solid #DADADA;
       }
     }
 
@@ -53,20 +59,21 @@
     }
 
     @media (max-width: 768px) {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
       margin: 0.5rem 0 1.5rem;
       gap: 0rem;
       font-size: 1rem;
 
-      .centerTabs {
-        display: flex;
-        gap: 0rem;
+      .emptyDiv {
+        display: none;
       }
 
       .tabItem {
-        padding: 0.25rem .5rem;
+        padding: 0.25rem .75rem 0.5rem;
+      }
+
+      .arrowButton {
+        width: 24px;
+        height: 24px;
       }
     }
   }

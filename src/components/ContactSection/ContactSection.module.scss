@@ -4,7 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 95vh; // almost full viewport height on laptops
+  max-height: 90vh; // almost full viewport height on laptops
 
   .container {
     max-width: 1200px;
@@ -23,18 +23,19 @@
       background: #fff;
       border: 3px solid #000;
       padding: 2rem;
-      border-radius: 12px;
+      border-radius: 4.95px;
       box-shadow: 6px 6px 0 #000; // offset black drop for bold card look
 
       .formTitle {
         font-size: 1.5rem;
         font-weight: 700;
         margin-bottom: 0.5rem;
+        color: var(--background);
       }
 
       .formSubtitle {
         font-size: 0.9rem;
-        color: var(--text-secondary);
+        color: var(--background);
         margin-bottom: 2rem;
       }
 
@@ -60,6 +61,7 @@
             border-radius: 8px;
             font-size: 1rem;
             outline: none;
+            color: var(--black-color);
 
             &:focus {
               border-color: #000;
@@ -286,6 +288,7 @@
   }
 
   @media (max-width: 768px) {
+    max-height: none;
     padding: 1rem;
   }
 }

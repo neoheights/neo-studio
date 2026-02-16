@@ -28,8 +28,24 @@ export default function Hero() {
     return () => clearInterval(interval);
   }, []);
 
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (!element) return;
+
+    const offset = 120; // navbar height
+    const elementPosition =
+      element.getBoundingClientRect().top + window.pageYOffset;
+
+    const offsetPosition = elementPosition - offset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
+  };
+
   return (
-    <section className={styles.heroSection}>
+    <section className={styles.heroSection} id='home'>
       <div className={styles.overlayContainer}></div>
 
       {/* Background Carousel */}
@@ -51,7 +67,7 @@ export default function Hero() {
           aesthetics to transform your space into a beautiful room you&apos;ll love specializing in high-end 2
           BHK interior design and luxury 3 BHK flat interior design.
         </p>
-        <button className={styles.ctaButton}>Get Free Quote</button>
+        <button className={styles.ctaButton} onClick={() => scrollToSection('contact')}>Get Free Quote</button>
       </div>
 
       {/* Bottom Right Popup */}
@@ -63,16 +79,40 @@ export default function Hero() {
           </div>
           <div className={styles.verticalsList}>
             <div className={styles.verticalItem} title="Vertical 1">
-              <Home size={24} />
+              <Image
+                src={require('@/assets/images/Hero/vertex1.png')}
+                alt="i"
+                className={styles.verticalItemImage}
+                width={1000}
+                height={1000}
+              />
             </div>
             <div className={styles.verticalItem} title="Vertical 2">
-              <Box size={24} />
+              <Image
+                src={require('@/assets/images/Hero/vertex2.png')}
+                alt="i"
+                className={styles.verticalItemImage}
+                width={1000}
+                height={1000}
+              />
             </div>
             <div className={styles.verticalItem} title="Vertical 3">
-              <Mountain size={24} />
+              <Image
+                src={require('@/assets/images/Hero/vertex3.png')}
+                alt="i"
+                className={styles.verticalItemImage}
+                width={1000}
+                height={1000}
+              />
             </div>
             <div className={styles.verticalItem} title="Vertical 4">
-              <Building size={24} />
+              <Image
+                src={require('@/assets/images/Hero/vertex4.png')}
+                alt="i"
+                className={styles.verticalItemImage}
+                width={1000}
+                height={1000}
+              />
             </div>
           </div>
         </div>

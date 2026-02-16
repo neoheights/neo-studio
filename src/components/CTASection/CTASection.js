@@ -1,14 +1,32 @@
+'use client'
+
 import React from 'react';
 import styles from './CTASection.module.scss';
 
 const CTASection = () => {
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (!element) return;
+
+    const offset = 120; // navbar height
+    const elementPosition =
+      element.getBoundingClientRect().top + window.pageYOffset;
+
+    const offsetPosition = elementPosition - offset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <section className={styles.ctaSection}>
-      <video 
-        autoPlay 
-        muted 
-        loop 
-        playsInline 
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
         className={styles.bgVideo}
       >
         <source src="/videos/cta_bg.mp4" type="video/mp4" />
@@ -18,7 +36,7 @@ const CTASection = () => {
         <h2 className={styles.heading}>
           Don&apos;t wait another day to create the home you&apos;ve always wanted
         </h2>
-        <button className={styles.ctaButton}>
+        <button className={styles.ctaButton} onClick={() => scrollToSection('contact')}>
           Get Free Quote
         </button>
       </div>

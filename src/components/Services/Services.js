@@ -30,8 +30,8 @@ export default function Services() {
   };
 
   return (
-    <section className={styles.servicesSection}>
-      <SectionHeader 
+    <section className={styles.servicesSection} id='services'>
+      <SectionHeader
         title="Designing Interiors with Purpose"
         description="From initial design support to final delivery, our complete business model ensures excellence at every stage of the project lifecycle."
         buttonText="Explore Services"
@@ -39,25 +39,25 @@ export default function Services() {
       />
 
       <div className={styles.tabsContainer}>
+        <div className={styles.emptyDiv} />
         <div className={styles.centerTabs}>
-            <div 
+          <div
             className={`${styles.tabItem} ${activeTab === 'Residential' ? styles.active : ''}`}
             onClick={() => setActiveTab('Residential')}
-            >
+          >
             Residential
-            </div>
-            <div 
+          </div>
+          <div
             className={`${styles.tabItem} ${activeTab === 'Commercial' ? styles.active : ''}`}
             onClick={() => setActiveTab('Commercial')}
-            >
+          >
             Commercial
-            </div>
+          </div>
         </div>
-        
         <div className={styles.arrowWrapper}>
-            <button className={styles.arrowButton} onClick={toggleTab}>
+          <button className={styles.arrowButton} onClick={toggleTab}>
             {activeTab === 'Residential' ? <ChevronRight size={20} /> : <ChevronLeft size={20} />}
-            </button>
+          </button>
         </div>
       </div>
 

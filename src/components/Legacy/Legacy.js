@@ -23,12 +23,12 @@ const Legacy = () => {
                         placeholder="blur"
                     />
                     <div className={styles.quoteCard}>
-                        <Quote className={styles.quoteIcon} size={24} fill="currentColor" />
+                        {/* <Quote className={styles.quoteIcon} size={24} fill="currentColor" /> */}
                         <div className={styles.quoteTextWrap}>
                             <p className={styles.quoteText}>
                                 Our legacy is defined by the structures we build and the trust we earn with every client.
                             </p>
-                            <span className={styles.quoteAuthor}>— Arul Group Leadership</span>
+                            {/* <span className={styles.quoteAuthor}>— Arul Group Leadership</span> */}
                         </div>
                     </div>
                 </div>

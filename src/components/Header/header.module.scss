@@ -10,9 +10,21 @@
   transition: background-color 0.3s ease;
 
   &.scrolled {
-    background-color: var(--nav-bg);
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--glass-border);
+
+    .navDesktop {
+      a {
+        color: var(--black-color);
+        cursor: pointer;
+      }
+    }
+
+    .menuButton {
+      color: var(--black-color);
+    }
   }
 
   .logo {
@@ -51,6 +63,7 @@
       font-size: .85rem;
       font-weight: 300;
       transition: color 0.2s;
+      cursor: pointer;
 
       &:hover {
         color: var(--primary-yellow);
@@ -198,6 +211,7 @@
       padding-bottom: 0.5rem;
       border-bottom: 1px solid transparent;
       transition: all 0.2s;
+      cursor: pointer;
 
       &:hover {
         color: var(--primary-yellow);

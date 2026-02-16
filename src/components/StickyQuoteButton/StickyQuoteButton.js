@@ -25,12 +25,28 @@ export default function StickyQuoteButton({ targetId }) {
     window.addEventListener('scroll', handleScroll);
     // Trigger once on mount
     handleScroll();
-    
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, [targetId]);
 
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (!element) return;
+
+    const offset = 120; // navbar height
+    const elementPosition =
+      element.getBoundingClientRect().top + window.pageYOffset;
+
+    const offsetPosition = elementPosition - offset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
+  };
+
   return (
-    <button className={`${styles.stickyQuoteButton} ${isVisible ? styles.visible : ''}`}>
+    <button className={`${styles.stickyQuoteButton} ${isVisible ? styles.visible : ''}`} onClick={() => scrollToSection('contact')}>
       Get Free Quote
     </button>
   );

@@ -13,6 +13,8 @@ const ContactSection = () => {
     city: 'Property City',
     whatsapp: false
   });
+  const [status, setStatus] = useState({ sending: false, ok: null, error: null });
+
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -22,13 +24,29 @@ const ContactSection = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    setStatus({ sending: true, ok: null, error: null });
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json();
+      if (res.ok && data.ok) {
+        setStatus({ sending: false, ok: true, error: null });
+        setFormData({ name: '', city: '', phone: '', whatsapp: false });
+      } else {
+        throw new Error(data.error || 'Request failed');
+      }
+    } catch (err) {
+      setStatus({ sending: false, ok: false, error: err.message || 'Failed to send' });
+    }
   };
 
   return (
-    <section className={styles.contactSection}>
+    <section className={styles.contactSection} id="contact">
       <div className={styles.container}>
 
         <div className={styles.formColumn}>
@@ -94,6 +112,8 @@ const ContactSection = () => {
               By submitting, you agree to our privacy policy and terms of use, allowing us to use your information as outlined.
             </p>
           </form>
+          {status.ok && <p className={styles.successMsg}>Thanks! We will reach out shortly.</p>}
+          {status.error && <p className={styles.errorMsg}>Error: {status.error}</p>}
         </div>
 
         <div className={styles.infoColumn}>
