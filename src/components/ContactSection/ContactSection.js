@@ -45,6 +45,19 @@ const ContactSection = () => {
     }
   };
 
+  const indianCities = [
+    "Ahmedabad", "Bangalore", "Bhopal", "Bhubaneswar", "Chandigarh",
+    "Chennai", "Coimbatore", "Dehradun", "Delhi", "Faridabad",
+    "Ghaziabad", "Gurgaon", "Guwahati", "Hyderabad", "Indore",
+    "Jaipur", "Jalandhar", "Jammu", "Kanpur", "Kochi",
+    "Kolkata", "Lucknow", "Ludhiana", "Madurai", "Mangalore",
+    "Meerut", "Mohali", "Mumbai", "Mysore", "Nagpur",
+    "Nashik", "Noida", "Patna", "Pune", "Raipur",
+    "Rajkot", "Ranchi", "Surat", "Thane", "Trichy",
+    "Trivandrum", "Udaipur", "Vadodara", "Varanasi", "Vijayawada",
+    "Visakhapatnam"
+  ];
+
   return (
     <section className={styles.contactSection} id="contact">
       <div className={styles.container}>
@@ -86,10 +99,15 @@ const ContactSection = () => {
                 onChange={handleChange}
                 className={styles.select}
               >
-                <option disabled>Property City</option>
-                <option value="Chennai">Chennai</option>
-                <option value="Bangalore">Bangalore</option>
-                <option value="Mumbai">Mumbai</option>
+                <option value="" disabled>
+                  Property City
+                </option>
+
+                {indianCities.map((city) => (
+                  <option key={city} value={city}>
+                    {city}
+                  </option>
+                ))}
               </select>
             </div>
 

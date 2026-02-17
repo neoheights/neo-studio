@@ -7,7 +7,7 @@ const GradientCTA = () => {
       <div className={styles.container}>
         <div className={styles.content}>
           <h2 className={styles.heading}>
-            Don't wait another day to create the home you've always wanted
+            Don’t Wait Another Day to Create the Home you’ve Always Wanted.
           </h2>
           <button className={styles.ctaButton}>
             Get Free Quote

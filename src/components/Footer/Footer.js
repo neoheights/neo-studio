@@ -18,7 +18,7 @@ const Footer = () => {
           <div className={styles.topSection}>
             <div className={styles.headingWrapper}>
               <h2 className={styles.heading}>
-                Let's discuss your Vision
+                Let's Discuss your Vision
                 {/* <br /> */}
                 <span className={styles.highlight}>Connect</span> with us
               </h2>

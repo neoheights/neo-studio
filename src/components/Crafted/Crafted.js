@@ -36,7 +36,7 @@ export default function Crafted() {
   return (
     <section className={styles.craftedSection} id="projects">
       <SectionHeader
-        title="Great Spaces are Crafted with Skill, Passion, and Attention to Detail."
+        title="Great spaces are crafted with skill, passion, and attention to detail."
         description="From initial design support to final delivery, our complete business model ensures excellence at every stage of the project lifecycle."
         buttonText="Discover more"
         layout="side"

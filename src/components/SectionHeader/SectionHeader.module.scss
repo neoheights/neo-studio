@@ -15,6 +15,8 @@
       font-weight: 700;
       margin-bottom: 0.75rem;
       color: var(--black-color);
+      line-height: 1.2;
+      letter-spacing: -0.2px;
     }
 
     p {
@@ -26,15 +28,19 @@
     }
 
     .actionButton {
-      background-color: #D4D433; // Yellow
-      border: 3px solid #000;
-      border-radius: 5px;
-      box-shadow: 4px 4px 0px #000;
-      padding: 0.8rem 2rem;
-      font-size: 1.2rem;
+      background-color: #D4D433; // Yellow/Lime
+      color: #000;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1.25rem;
       font-weight: 500;
       cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s;
+      border-radius: 8px;
+      transition: transform 0.2s, background-color 0.2s;
+
+      // Match image style: black border, maybe box shadow
+      border: 2.6px solid #000000;
+      box-shadow: 4px 4px 0px #000;
 
       &:hover {
         transform: translate(-2px, -2px);

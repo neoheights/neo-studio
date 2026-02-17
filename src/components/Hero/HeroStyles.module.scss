@@ -89,15 +89,15 @@
       background-color: #D4D433; // Yellow/Lime
       color: #000;
       border: none;
-      padding: 1rem 2rem;
-      font-size: 1rem;
-      font-weight: 600;
+      padding: 0.75rem 1.5rem;
+      font-size: 1.25rem;
+      font-weight: 500;
       cursor: pointer;
-      border-radius: 4px;
+      border-radius: 8px;
       transition: transform 0.2s, background-color 0.2s;
 
       // Match image style: black border, maybe box shadow
-      border: 2px solid #000;
+      border: 2.6px solid  #000000;
       box-shadow: 4px 4px 0px #000;
 
       &:hover {

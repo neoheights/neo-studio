@@ -59,7 +59,7 @@
       transition: transform 0.2s, background-color 0.2s;
 
       // Match image style: black border, maybe box shadow
-      border: 2.6px solid var(--Border, #000000);
+      border: 2.6px solid  #000000;
       box-shadow: 4px 4px 0px #000;
 
       &:hover {
