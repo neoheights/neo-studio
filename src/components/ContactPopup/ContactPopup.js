@@ -6,7 +6,7 @@ import styles from './ContactPopup.module.scss';
 import ContactSection from '../ContactSection/ContactSection';
 
 export default function ContactPopup() {
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(true);
 
     useEffect(() => {
         // show only first time
@@ -17,7 +17,7 @@ export default function ContactPopup() {
         const timer = setTimeout(() => {
             setIsOpen(true);
             localStorage.setItem('contact_popup_shown', 'true');
-        }, 3000); // 30 seconds
+        }, 30000); // 30 seconds
 
         return () => clearTimeout(timer);
     }, []);
