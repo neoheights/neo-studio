@@ -31,7 +31,7 @@ const ContactSection = () => {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({...formData, pageUrl: window?.location?.href || 'Website'}),
       });
       const data = await res.json();
       if (res.ok && data.ok) {
@@ -46,16 +46,7 @@ const ContactSection = () => {
   };
 
   const indianCities = [
-    "Ahmedabad", "Bangalore", "Bhopal", "Bhubaneswar", "Chandigarh",
-    "Chennai", "Coimbatore", "Dehradun", "Delhi", "Faridabad",
-    "Ghaziabad", "Gurgaon", "Guwahati", "Hyderabad", "Indore",
-    "Jaipur", "Jalandhar", "Jammu", "Kanpur", "Kochi",
-    "Kolkata", "Lucknow", "Ludhiana", "Madurai", "Mangalore",
-    "Meerut", "Mohali", "Mumbai", "Mysore", "Nagpur",
-    "Nashik", "Noida", "Patna", "Pune", "Raipur",
-    "Rajkot", "Ranchi", "Surat", "Thane", "Trichy",
-    "Trivandrum", "Udaipur", "Vadodara", "Varanasi", "Vijayawada",
-    "Visakhapatnam"
+    "Bangalore North (KA04/KA50)", "Bangalore South (KA05/KA51)", "Bangalore East (KA03/KA53)", "Anekal/Chandapura (KA59)"
   ];
 
   return (

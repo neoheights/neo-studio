@@ -4,7 +4,7 @@ import { NextResponse } from 'next/server';
 export async function POST(request) {
   try {
     const body = await request.json();
-    const { name, city, phone, whatsapp } = body || {};
+    const { name, city, phone, whatsapp, pageUrl } = body || {};
 
     if (!name || !city) {
       return NextResponse.json(
@@ -40,20 +40,49 @@ export async function POST(request) {
     const text = `Name: ${name}
 Phone: ${phone || '-'}
 `;
+
     const html = `
-      <div style="font-family: Arial, sans-serif; color: #111;">
-        <h2 style="margin:0 0 12px;">New Contact Enquiry</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>City:</strong> ${city}</p>
-        <p><strong>Phone:</strong> ${phone || '-'}</p>
-        <p style="white-space:pre-line;"><strong>Whatsapp updates:</strong><br/>${whatsapp ? 'Required' : 'Not required' }</p>
-      </div>
-    `;
+  <div style="font-family: Arial, sans-serif; color: #ffffff; background:#0b0f1a; padding:20px;">
+    
+    <div style="max-width:600px;">
+      
+      <p style="margin:6px 0;"><strong>Name:</strong> ${name}</p>
+      <p style="margin:6px 0;"><strong>City:</strong> ${city}</p>
+      <p style="margin:6px 0;"><strong>Phone:</strong> ${phone || '-'}</p>
+      <p style="margin:6px 0;"><strong>Whatsapp updates:</strong><br/>${whatsapp ? 'Required' : 'Not required'}</p>
+
+      <p style="margin:18px 0;">---</p>
+
+      <p style="margin:6px 0;">
+        <strong>Date:</strong> ${new Date().toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    })}
+      </p>
+
+      <p style="margin:6px 0;">
+        <strong>Time:</strong> ${new Date().toLocaleTimeString('en-US', {
+      hour: '2-digit',
+      minute: '2-digit',
+    })}
+      </p>
+
+      <p style="margin:6px 0;">
+        <strong>Page URL:</strong>
+        <a href="${pageUrl}" style="color:#4da3ff; text-decoration:none;">
+          ${pageUrl}
+        </a>
+      </p>
+
+    </div>
+  </div>
+`;
 
     const sendResponse = await transporter.sendMail({
       from: `"Neo Heights Website" <${fromUser}>`,
       to,
-    //   replyTo: email,
+      //   replyTo: email,
       subject,
       text,
       html,
