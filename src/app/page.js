@@ -29,6 +29,7 @@ export default function Home() {
   return (
     <main>
       <Header />
+      <StickyQuoteButton targetId="crafted-section" />
       <Hero />
       <TrustedBy />
       <Services />
@@ -45,7 +46,6 @@ export default function Home() {
       <ContactSection />
       <FAQSection />
       <Footer />
-      <StickyQuoteButton targetId="crafted-section" />
     </main>
   );
 }

@@ -6,7 +6,7 @@ import styles from './ContactPopup.module.scss';
 import ContactSection from '../ContactSection/ContactSection';
 
 export default function ContactPopup() {
-    const [isOpen, setIsOpen] = useState(true);
+    const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
         // show only first time
