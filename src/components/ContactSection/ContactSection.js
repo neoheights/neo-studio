@@ -1,12 +1,14 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Mail, Phone, ArrowRight } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import { Mail, Phone, ArrowRight, Loader2 } from 'lucide-react';
 import styles from './ContactSection.module.scss';
 import Image from 'next/image';
 import BGImage from '@/assets/images/Hero/BG-1.png';
 
 const ContactSection = () => {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -31,12 +33,13 @@ const ContactSection = () => {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({...formData, pageUrl: window?.location?.href || 'Website'}),
+        body: JSON.stringify({ ...formData, pageUrl: window?.location?.href || 'Website' }),
       });
       const data = await res.json();
       if (res.ok && data.ok) {
         setStatus({ sending: false, ok: true, error: null });
         setFormData({ name: '', city: '', phone: '', whatsapp: false });
+        router.push('/thank-you');
       } else {
         throw new Error(data.error || 'Request failed');
       }
@@ -113,15 +116,21 @@ const ContactSection = () => {
               <label htmlFor="whatsapp">Send me updates on whatsapp</label>
             </div>
 
-            <button type="submit" className={styles.submitButton}>
-              Let's Talk
+            <button type="submit" className={styles.submitButton} disabled={status.sending}>
+              {status.sending ? (
+                <>
+                  <Loader2 className={styles.spinner} size={20} />
+                  Sending...
+                </>
+              ) : (
+                "Let's Talk"
+              )}
             </button>
 
             <p className={styles.disclaimer}>
               By submitting, you agree to our privacy policy and terms of use, allowing us to use your information as outlined.
             </p>
           </form>
-          {status.ok && <p className={styles.successMsg}>Thanks! We will reach out shortly.</p>}
           {status.error && <p className={styles.errorMsg}>Error: {status.error}</p>}
         </div>
 

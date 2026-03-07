@@ -91,19 +91,42 @@
           cursor: pointer;
           border-radius: 8px;
           transition: transform 0.2s, background-color 0.2s;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.5rem;
 
           // Match image style: black border, maybe box shadow
           border: 2.6px solid #000000;
           box-shadow: 4px 4px 0px #000;
 
-          &:hover {
+          &:hover:not(:disabled) {
             transform: translate(-2px, -2px);
             box-shadow: 6px 6px 0px #000;
           }
 
-          &:active {
+          &:active:not(:disabled) {
             transform: translate(0, 0);
             box-shadow: 2px 2px 0px #000;
+          }
+
+          &:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            background-color: #e2e2a5;
+          }
+
+          .spinner {
+            animation: spin 1s linear infinite;
+          }
+        }
+
+        @keyframes spin {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
           }
         }
 
