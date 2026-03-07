@@ -28,6 +28,22 @@ import Legacy from "@/components/Legacy/Legacy";
 export default function Home() {
   return (
     <main>
+      <head>
+        {/* <!-- Google tag (gtag.js) --> */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-17EXSCS0R9"
+          strategy="afterInteractive"
+        />
+
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-17EXSCS0R9');
+          `}
+        </Script>
+      </head>
       <Header />
       <StickyQuoteButton targetId="crafted-section" />
       <Hero />
