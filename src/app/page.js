@@ -24,6 +24,7 @@ import StickyQuoteButton from "../components/StickyQuoteButton/StickyQuoteButton
 import CTASection from "@/components/CTASection/CTASection";
 import TrustedBy from "@/components/TrustedBy/TrustedBy";
 import Legacy from "@/components/Legacy/Legacy";
+import Script from "next/script";
 
 export default function Home() {
   return (

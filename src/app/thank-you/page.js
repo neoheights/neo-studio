@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { Check, X } from 'lucide-react';
 import styles from './thank-you.module.scss';
 import BGImage from '@/assets/images/thankYou/thankYouBg.jpg';
+import Script from 'next/script';
 
 const ThankYouPage = () => {
   return (
