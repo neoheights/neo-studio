@@ -61,9 +61,9 @@ const ThankYouPage = () => {
               Continue Exploring
             </Link>
 
-            <p className={styles.footerText}>
+            {/* <p className={styles.footerText}>
               Check your email for confirmation details
-            </p>
+            </p> */}
           </div>
         </div>
       </div>

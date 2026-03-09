@@ -17,6 +17,29 @@ export async function POST(request) {
     const port = Number(process.env.SMTP_PORT || 587);
     const user = process.env.SMTP_USER;
     const pass = process.env.SMTP_PASS;
+    const excelSheetUrl = process.env.EXCEL_SHEET;
+
+    // Send to Excel Sheet if configured
+    if (excelSheetUrl) {
+      try {
+        await fetch(excelSheetUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name,
+            city,
+            phone,
+            whatsapp: whatsapp ? 'Yes' : 'No',
+            pageUrl,
+            date: new Date().toLocaleDateString('en-IN'),
+            time: new Date().toLocaleTimeString('en-IN')
+          }),
+        });
+      } catch (excelErr) {
+        console.error('Failed to send lead to Excel:', excelErr);
+      }
+    }
+
     const secure = String(process.env.SMTP_SECURE || '').toLowerCase() === 'true' || port === 465;
     const to = process.env.SMTP_TO || user;
 
