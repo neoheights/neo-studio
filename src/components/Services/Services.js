@@ -5,11 +5,13 @@ import SectionHeader from '../SectionHeader/SectionHeader';
 import { ChevronRight, ChevronLeft } from 'lucide-react';
 import styles from './Services.module.scss';
 import Image from 'next/image';
+import { usePopup } from '../PopupProvider';
 
 // Dummy images for now
 const dummyImage = "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop";
 
 export default function Services() {
+  const { openPopup } = usePopup();
   const [activeTab, setActiveTab] = useState('Residential'); // 'Residential' | 'Commercial'
 
   const toggleTab = () => {
@@ -36,6 +38,7 @@ export default function Services() {
         description="From initial design support to final delivery, our complete business model ensures excellence at every stage of the project lifecycle."
         buttonText="Explore Services"
         layout="center"
+        onButtonClick={openPopup}
       />
 
       <div className={styles.tabsContainer}>

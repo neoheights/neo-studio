@@ -4,6 +4,7 @@ import { useState } from 'react';
 import SectionHeader from '../SectionHeader/SectionHeader';
 import styles from './Crafted.module.scss';
 import Image from 'next/image';
+import { usePopup } from '../PopupProvider';
 
 const dummyImages = [
   require('@/assets/images/crafted/crafted1.jpg'),
@@ -12,6 +13,7 @@ const dummyImages = [
 ];
 
 export default function Crafted() {
+  const { openPopup } = usePopup();
   const items = [
     {
       id: 1,
@@ -40,6 +42,7 @@ export default function Crafted() {
         description="From initial design support to final delivery, our complete business model ensures excellence at every stage of the project lifecycle."
         buttonText="Discover more"
         layout="side"
+        onButtonClick={openPopup}
       />
 
       <div className={styles.contentContainer}>

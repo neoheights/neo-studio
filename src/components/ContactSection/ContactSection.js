@@ -7,7 +7,7 @@ import styles from './ContactSection.module.scss';
 import Image from 'next/image';
 import BGImage from '@/assets/images/Hero/BG-1.png';
 
-const ContactSection = () => {
+const ContactSection = ({ handleClose }) => {
   const router = useRouter();
   const [formData, setFormData] = useState({
     name: '',
@@ -39,6 +39,9 @@ const ContactSection = () => {
       if (res.ok && data.ok) {
         setStatus({ sending: false, ok: true, error: null });
         setFormData({ name: '', city: '', phone: '', whatsapp: false });
+        if (typeof handleClose === 'function') {
+          handleClose(); // Close the popup
+        }
         router.push('/thank-you');
       } else {
         throw new Error(data.error || 'Request failed');

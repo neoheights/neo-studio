@@ -2,8 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import styles from './StickyQuoteButton.module.scss';
+import { usePopup } from '../PopupProvider';
 
 export default function StickyQuoteButton({ targetId }) {
+  const { openPopup } = usePopup();
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -45,7 +47,7 @@ export default function StickyQuoteButton({ targetId }) {
   };
 
   return (
-    <button className={`${styles.stickyQuoteButton} ${isVisible ? styles.visible : ''}`} onClick={() => scrollToSection('contact')}>
+    <button className={`${styles.stickyQuoteButton} ${isVisible ? styles.visible : ''}`} onClick={openPopup}>
       Get Free Quote
     </button>
   );

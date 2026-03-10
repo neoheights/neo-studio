@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { X, Home, Box, Mountain, Building } from 'lucide-react';
 import styles from './HeroStyles.module.scss';
+import { usePopup } from '../PopupProvider';
 
 // Import images
 import BG from '../../assets/images/Hero/BG.png';
@@ -17,6 +18,7 @@ import BG6 from '../../assets/images/Hero/BG-6.png';
 const images = [BG, BG1, BG2, BG3, BG4, BG5, BG6];
 
 export default function Hero() {
+  const { openPopup } = usePopup();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isPopupOpen, setIsPopupOpen] = useState(true);
 
@@ -67,7 +69,7 @@ export default function Hero() {
           aesthetics to transform your space into a beautiful room you&apos;ll love specializing in high-end 2
           BHK interior design and luxury 3 BHK flat interior design.
         </p>
-        <button className={styles.ctaButton} onClick={() => scrollToSection('contact')}>Get Free Quote</button>
+        <button className={styles.ctaButton} onClick={openPopup}>Get Free Quote</button>
       </div>
 
       {/* Bottom Right Popup */}

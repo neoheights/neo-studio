@@ -1,12 +1,18 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { X } from 'lucide-react';
 import styles from './ContactPopup.module.scss';
 import ContactSection from '../ContactSection/ContactSection';
+import { usePopup } from '../PopupProvider';
 
 export default function ContactPopup() {
-    const [isOpen, setIsOpen] = useState(false);
+    const { isPopupOpen, closePopup, openPopup } = usePopup();
+
+    const handleClose = () => {
+        localStorage.setItem('contact_popup_shown', 'true');
+        closePopup();
+    }
 
     useEffect(() => {
         // show only first time
@@ -15,21 +21,21 @@ export default function ContactPopup() {
         if (alreadyShown) return;
 
         const timer = setTimeout(() => {
-            setIsOpen(true);
+            openPopup();
             localStorage.setItem('contact_popup_shown', 'true');
-        }, 30000); // 30 seconds
+        }, 3000); // 3 seconds
 
         return () => clearTimeout(timer);
-    }, []);
+    }, [openPopup]);
 
-    if (!isOpen) return null;
+    if (!isPopupOpen) return null;
 
     return (
         <div className={styles.overlay}>
             <div className={styles.popup}>
                 <div
                     className={styles.closeBtn}
-                    onClick={() => setIsOpen(false)}
+                    onClick={closePopup}
                 >
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M5 1H27C29.2091 1 31 2.79086 31 5V27C31 29.2091 29.2091 31 27 31H5C2.79086 31 1 29.2091 1 27V5C1 2.79086 2.79086 1 5 1Z" fill="#D6DE29" />
@@ -40,7 +46,7 @@ export default function ContactPopup() {
                 </div>
 
                 {/* Contact component goes here */}
-                <ContactSection />
+                <ContactSection handleClose={handleClose} />
             </div>
         </div>
     );
