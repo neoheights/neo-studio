@@ -12,7 +12,7 @@ const ContactSection = ({ handleClose }) => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    city: 'Property City',
+    city: '',
     whatsapp: false
   });
   const [status, setStatus] = useState({ sending: false, ok: null, error: null });
@@ -28,6 +28,13 @@ const ContactSection = ({ handleClose }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Industrial standard validation: check if city is selected
+    if (!formData.city) {
+      setStatus({ sending: false, ok: null, error: 'Please select a property city' });
+      return;
+    }
+
     setStatus({ sending: true, ok: null, error: null });
     try {
       const res = await fetch('/api/contact', {
@@ -89,15 +96,16 @@ const ContactSection = ({ handleClose }) => {
             </div>
 
             <div className={styles.inputGroup}>
-              <label>Property City</label>
+              <label>Property City *</label>
               <select
                 name="city"
                 value={formData.city}
                 onChange={handleChange}
                 className={styles.select}
+                required
               >
                 <option value="" disabled>
-                  Property City
+                  Select Property City
                 </option>
 
                 {indianCities.map((city) => (
