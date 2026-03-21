@@ -87,7 +87,7 @@ const ContactSection = ({ handleClose }) => {
 
           <form onSubmit={handleSubmit} className={styles.form}>
             <div className={styles.inputGroup}>
-              <label>Name *</label>
+              <label>Name <span>*</span></label>
               <input
                 type="text"
                 name="name"
@@ -99,7 +99,7 @@ const ContactSection = ({ handleClose }) => {
             </div>
 
             <div className={styles.inputGroup}>
-              <label>Phone Number *</label>
+              <label>Phone Number <span>*</span></label>
               <input
                 type="tel"
                 name="phone"
@@ -112,7 +112,7 @@ const ContactSection = ({ handleClose }) => {
 
             <div className={styles.formRow}>
               <div className={styles.inputGroup}>
-                <label>Property Size *</label>
+                <label>Property Size <span>*</span></label>
                 <select
                   name="propertySize"
                   value={formData.propertySize}
@@ -128,7 +128,7 @@ const ContactSection = ({ handleClose }) => {
               </div>
 
               <div className={styles.inputGroup}>
-                <label>Property Location *</label>
+                <label>Property Location <span>*</span></label>
                 <select
                   name="propertyLocation"
                   value={formData.propertyLocation}
@@ -145,22 +145,22 @@ const ContactSection = ({ handleClose }) => {
             </div>
 
             <div className={styles.inputGroup}>
-              <label>Message</label>
+              <label>Scope of work</label>
               <textarea
-                name="message"
+                name="scopeOfWork"
                 placeholder="Message"
-                value={formData.message}
+                value={formData.scopeOfWork}
                 onChange={handleChange}
                 className={styles.textarea}
               />
             </div>
 
             <div className={styles.inputGroup}>
-              <label>Scope of work</label>
+              <label>Message</label>
               <textarea
-                name="scopeOfWork"
+                name="message"
                 placeholder="Message"
-                value={formData.scopeOfWork}
+                value={formData.message}
                 onChange={handleChange}
                 className={styles.textarea}
               />

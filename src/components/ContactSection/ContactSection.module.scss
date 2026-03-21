@@ -66,6 +66,10 @@
           label {
             font-size: 0.9rem;
             font-weight: 600;
+
+            span {
+              color: #F24E1E;
+            }
           }
 
           input,
@@ -80,9 +84,9 @@
             width: 100%;
 
             // Important for Safari
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
+            // -webkit-appearance: none;
+            // -moz-appearance: none;
+            // appearance: none;
 
             &:focus {
               border-color: #000;
