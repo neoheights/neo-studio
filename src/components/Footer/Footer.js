@@ -60,11 +60,11 @@ const Footer = () => {
 
           <div className={styles.bottomSection}>
             <div className={styles.socials}>
-              <a href="#" className={styles.socialIcon}><Facebook size={18} /></a>
-              <a href="#" className={styles.socialIcon}><Instagram size={18} /></a>
-              <a href="#" className={styles.socialIcon}><Linkedin size={18} /></a>
-              <a href="#" className={styles.socialIcon}><Globe size={18} /></a>
-              <a href="#" className={styles.socialIcon}><Youtube size={18} /></a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}><Facebook size={18} /></a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}><Instagram size={18} /></a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}><Linkedin size={18} /></a>
+              <a href="https://theneostudio.com" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}><Globe size={18} /></a>
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}><Youtube size={18} /></a>
             </div>
             <div className={styles.copyright}>
               2026 © All rights reserved

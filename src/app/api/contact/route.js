@@ -4,11 +4,11 @@ import { NextResponse } from 'next/server';
 export async function POST(request) {
   try {
     const body = await request.json();
-    const { name, city, phone, whatsapp, pageUrl } = body || {};
+    const { name, phone, propertySize, propertyLocation, message, scopeOfWork, whatsapp, pageUrl } = body || {};
 
-    if (!name || !city) {
+    if (!name || !phone || !propertySize || !propertyLocation) {
       return NextResponse.json(
-        { ok: false, error: 'Missing required fields: name, city' },
+        { ok: false, error: 'Missing required fields: name, phone, property size, or location' },
         { status: 400 }
       );
     }
@@ -27,12 +27,17 @@ export async function POST(request) {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             name,
-            city,
             phone,
+            propertySize,
+            propertyLocation,
+            message,
+            scopeOfWork,
             whatsapp: whatsapp ? 'Yes' : 'No',
             pageUrl,
             date: new Date().toLocaleDateString('en-IN'),
-            time: new Date().toLocaleTimeString('en-IN')
+            time: new Date().toLocaleTimeString('en-IN'),
+
+            sheetName: "Sheet3" // This is for updated form to Add in new sheet 
           }),
         });
       } catch (excelErr) {
@@ -70,8 +75,11 @@ Phone: ${phone || '-'}
     <div style="max-width:600px;">
       
       <p style="margin:6px 0;"><strong>Name:</strong> ${name}</p>
-      <p style="margin:6px 0;"><strong>City:</strong> ${city}</p>
       <p style="margin:6px 0;"><strong>Phone:</strong> ${phone || '-'}</p>
+      <p style="margin:6px 0;"><strong>Property Size:</strong> ${propertySize}</p>
+      <p style="margin:6px 0;"><strong>Property Location:</strong> ${propertyLocation}</p>
+      <p style="margin:6px 0;"><strong>Message:</strong> ${message || '-'}</p>
+      <p style="margin:6px 0;"><strong>Scope of work:</strong> ${scopeOfWork || '-'}</p>
       <p style="margin:6px 0;"><strong>Whatsapp updates:</strong><br/>${whatsapp ? 'Required' : 'Not required'}</p>
 
       <p style="margin:18px 0;">---</p>

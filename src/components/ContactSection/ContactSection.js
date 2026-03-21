@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Mail, Phone, ArrowRight, Loader2 } from 'lucide-react';
+import { Mail, Phone, ArrowRight, Loader2, Facebook, Instagram, Linkedin, Youtube } from 'lucide-react';
 import styles from './ContactSection.module.scss';
 import Image from 'next/image';
 import BGImage from '@/assets/images/Hero/BG-1.png';
@@ -12,7 +12,10 @@ const ContactSection = ({ handleClose }) => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    city: '',
+    propertySize: '',
+    propertyLocation: '',
+    message: '',
+    scopeOfWork: '',
     whatsapp: false
   });
   const [status, setStatus] = useState({ sending: false, ok: null, error: null });
@@ -29,9 +32,9 @@ const ContactSection = ({ handleClose }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Industrial standard validation: check if city is selected
-    if (!formData.city) {
-      setStatus({ sending: false, ok: null, error: 'Please select a property city' });
+    // Industrial standard validation
+    if (!formData.propertySize || !formData.propertyLocation) {
+      setStatus({ sending: false, ok: null, error: 'Please select both property size and location' });
       return;
     }
 
@@ -45,7 +48,15 @@ const ContactSection = ({ handleClose }) => {
       const data = await res.json();
       if (res.ok && data.ok) {
         setStatus({ sending: false, ok: true, error: null });
-        setFormData({ name: '', city: '', phone: '', whatsapp: false });
+        setFormData({
+          name: '',
+          phone: '',
+          propertySize: '',
+          propertyLocation: '',
+          message: '',
+          scopeOfWork: '',
+          whatsapp: false
+        });
         if (typeof handleClose === 'function') {
           handleClose(); // Close the popup
         }
@@ -58,8 +69,12 @@ const ContactSection = ({ handleClose }) => {
     }
   };
 
-  const indianCities = [
-    "Bangalore North (KA04/KA50)", "Bangalore South (KA05/KA51)", "Bangalore East (KA03/KA53)", "Anekal/Chandapura (KA59)"
+  const propertySizes = [
+    "1 BHK", "2 BHK", "3 BHK", "4 BHK", "5 BHK", "Villa", "Plot", "Other"
+  ];
+
+  const propertyLocations = [
+    "Bangalore North (KA04/KA50)", "Bangalore South (KA05/KA51)", "Bangalore East (KA03/KA53)", "Anekal/Chandapura (KA59)", "Other"
   ];
 
   return (
@@ -95,25 +110,60 @@ const ContactSection = ({ handleClose }) => {
               />
             </div>
 
-            <div className={styles.inputGroup}>
-              <label>Property City *</label>
-              <select
-                name="city"
-                value={formData.city}
-                onChange={handleChange}
-                className={styles.select}
-                required
-              >
-                <option value="" disabled>
-                  Select Property City
-                </option>
+            <div className={styles.formRow}>
+              <div className={styles.inputGroup}>
+                <label>Property Size *</label>
+                <select
+                  name="propertySize"
+                  value={formData.propertySize}
+                  onChange={handleChange}
+                  className={styles.select}
+                  required
+                >
+                  <option value="" disabled>Select</option>
+                  {propertySizes.map((size) => (
+                    <option key={size} value={size}>{size}</option>
+                  ))}
+                </select>
+              </div>
 
-                {indianCities.map((city) => (
-                  <option key={city} value={city}>
-                    {city}
-                  </option>
-                ))}
-              </select>
+              <div className={styles.inputGroup}>
+                <label>Property Location *</label>
+                <select
+                  name="propertyLocation"
+                  value={formData.propertyLocation}
+                  onChange={handleChange}
+                  className={styles.select}
+                  required
+                >
+                  <option value="" disabled>Select</option>
+                  {propertyLocations.map((loc) => (
+                    <option key={loc} value={loc}>{loc}</option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
+            <div className={styles.inputGroup}>
+              <label>Message</label>
+              <textarea
+                name="message"
+                placeholder="Message"
+                value={formData.message}
+                onChange={handleChange}
+                className={styles.textarea}
+              />
+            </div>
+
+            <div className={styles.inputGroup}>
+              <label>Scope of work</label>
+              <textarea
+                name="scopeOfWork"
+                placeholder="Message"
+                value={formData.scopeOfWork}
+                onChange={handleChange}
+                className={styles.textarea}
+              />
             </div>
 
             <div className={styles.checkboxGroup}>
@@ -176,7 +226,9 @@ const ContactSection = ({ handleClose }) => {
 
               <div className={styles.contactRow}>
                 <div className={styles.contactItem}>
-                  <Mail size={18} color="#D4D433" />
+                  <div className={styles.mailIconBox}>
+                    <Mail size={16} color="#fff" />
+                  </div>
                   <span>hello@theneostudio.com</span>
                 </div>
                 <ArrowRight className={styles.rightArrow} size={20} />
@@ -184,12 +236,29 @@ const ContactSection = ({ handleClose }) => {
 
               <div className={styles.contactRow}>
                 <div className={styles.contactItem}>
-                  <Phone size={18} color="#D4D433" />
+                  <div className={styles.phoneIconBox}>
+                    <Phone size={16} color="#fff" />
+                  </div>
                   <span>+91 99722 83300</span>
                 </div>
-                <ArrowRight className={styles.rightArrow} size={20} />
+                <ArrowRight className={styles.rightArrow} size={18} />
               </div>
             </div>
+          </div>
+
+          <div className={styles.socialIcons}>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
+              <Facebook size={20} fill="currentColor" />
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
+              <Instagram size={20} />
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
+              <Linkedin size={20} fill="currentColor" />
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
+              <Youtube size={20} fill="currentColor" />
+            </a>
           </div>
         </div>
 

@@ -30,9 +30,9 @@ const EndToEnd = () => {
             <video
               className={styles.imageContentImage}
               autoPlay
-              muted
+              // muted
               loop
-              controls={false}
+              controls
               // playsInline
             >
               <source src="/videos/right.mp4" type="video/mp4" />

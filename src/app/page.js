@@ -16,6 +16,7 @@ import TransformingSpaces from "../components/TransformingSpaces/TransformingSpa
 import StatsSection from "../components/StatsSection/StatsSection";
 import EndToEnd from "../components/EndToEnd/EndToEnd";
 import WhyChooseUs from "../components/WhyChooseUs/WhyChooseUs";
+import Testimonials from "../components/Testimonials/Testimonials";
 import GradientCTA from "../components/GradientCTA/GradientCTA";
 import ContactSection from "../components/ContactSection/ContactSection";
 import FAQSection from "../components/FAQSection/FAQSection";
@@ -24,6 +25,8 @@ import StickyQuoteButton from "../components/StickyQuoteButton/StickyQuoteButton
 import CTASection from "@/components/CTASection/CTASection";
 import TrustedBy from "@/components/TrustedBy/TrustedBy";
 import Legacy from "@/components/Legacy/Legacy";
+import LegacyOfDesign from "@/components/LegacyOfDesign/LegacyOfDefsign";
+import { MessageCircle } from "lucide-react";
 import Script from "next/script";
 
 export default function Home() {
@@ -58,11 +61,21 @@ export default function Home() {
       <StatsSection />
       <EndToEnd />
       <WhyChooseUs />
+      <Testimonials />
       <Legacy />
       {/* <GradientCTA /> */}
+      <LegacyOfDesign />
       <ContactSection />
       <FAQSection />
       <Footer />
+      <a
+        href="https://wa.me/919972283300?text=Hello%20I%20am%20interested%20in%20your%20services"
+        className="whatsappFloat"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <MessageCircle size={30} fill="currentColor" />
+      </a>
     </main>
   );
 }

@@ -80,42 +80,66 @@ export default function Hero() {
             <X size={18} className={styles.closeIcon} onClick={() => setIsPopupOpen(false)} />
           </div>
           <div className={styles.verticalsList}>
-            <div className={styles.verticalItem} title="Vertical 1">
+            <a
+              href="https://arulpolymers.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.verticalItem}
+              title="Arul Group"
+            >
               <Image
                 src={require('@/assets/images/Hero/vertex1.png')}
-                alt="i"
+                alt="Arul Group"
                 className={styles.verticalItemImage}
                 width={1000}
                 height={1000}
               />
-            </div>
-            <div className={styles.verticalItem} title="Vertical 2">
+            </a>
+            <a
+              href="https://www.arulrubbers.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.verticalItem}
+              title="Arul Rubbers"
+            >
               <Image
                 src={require('@/assets/images/Hero/vertex2.png')}
-                alt="i"
+                alt="Arul Rubbers"
                 className={styles.verticalItemImage}
                 width={1000}
                 height={1000}
               />
-            </div>
-            <div className={styles.verticalItem} title="Vertical 3">
+            </a>
+            <a
+              href="https://www.arulgroup.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.verticalItem}
+              title="Arul Polymers"
+            >
               <Image
                 src={require('@/assets/images/Hero/vertex3.png')}
-                alt="i"
+                alt="Arul Polymers"
                 className={styles.verticalItemImage}
                 width={1000}
                 height={1000}
               />
-            </div>
-            <div className={styles.verticalItem} title="Vertical 4">
+            </a>
+            <a
+              href="https://www.neoheights.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.verticalItem}
+              title="Neo Heights"
+            >
               <Image
                 src={require('@/assets/images/Hero/vertex4.png')}
-                alt="i"
+                alt="Neo Heights"
                 className={styles.verticalItemImage}
                 width={1000}
                 height={1000}
               />
-            </div>
+            </a>
           </div>
         </div>
       )}
