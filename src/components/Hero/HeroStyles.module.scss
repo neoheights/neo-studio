@@ -31,33 +31,21 @@
 
     border-radius: 10px;
     overflow: hidden;
+    display: flex;
+
+    .sliderInner {
+      display: flex;
+      width: 100%;
+      height: 100%;
+    }
 
     .bgImage {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 100%;
+      flex: 0 0 100%;
       height: 100%;
       border-radius: 30px;
       background-size: cover;
       background-position: center;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-
-      &.active {
-        opacity: 1;
-      }
-
-      // &::after {
-      //   content: '';
-      //   position: absolute;
-      //   top: 0;
-      //   left: 0;
-      //   width: 100%;
-      //   height: 100%;
-      //   background: rgba(0, 0, 0, 0.4); // Overlay for text readability
-      // }
+      opacity: 1; // Always visible now that they slide
     }
   }
 

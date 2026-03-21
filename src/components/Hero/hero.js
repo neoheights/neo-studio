@@ -21,14 +21,34 @@ export default function Hero() {
   const { openPopup } = usePopup();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isPopupOpen, setIsPopupOpen] = useState(true);
+  const [transitioning, setTransitioning] = useState(true);
+
+  const extendedImages = [...images, images[0]]; // Add first image at end for seamless loop
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000); // Change image every 5 seconds
+      setTransitioning(true);
+      setCurrentImageIndex((prevIndex) => {
+        if (prevIndex === images.length) {
+          return 1;
+        }
+        return prevIndex + 1;
+      });
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
+
+  // Handle seamless loop reset
+  useEffect(() => {
+    if (currentImageIndex === images.length) {
+      const timer = setTimeout(() => {
+        setTransitioning(false);
+        setCurrentImageIndex(0);
+      }, 1000); // Wait for transition to finish
+      return () => clearTimeout(timer);
+    }
+  }, [currentImageIndex]);
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -52,13 +72,21 @@ export default function Hero() {
 
       {/* Background Carousel */}
       <div className={styles.backgroundCarousel}>
-        {images.map((img, index) => (
-          <div
-            key={index}
-            className={`${styles.bgImage} ${index === currentImageIndex ? styles.active : ''}`}
-            style={{ backgroundImage: `url(${img.src})` }}
-          />
-        ))}
+        <div 
+          className={styles.sliderInner} 
+          style={{ 
+            transform: `translateX(-${currentImageIndex * 100}%)`,
+            transition: transitioning ? 'transform 1s ease-in-out' : 'none'
+          }}
+        >
+          {extendedImages.map((img, index) => (
+            <div
+              key={index}
+              className={styles.bgImage}
+              style={{ backgroundImage: `url(${img.src})` }}
+            />
+          ))}
+        </div>
       </div>
 
       {/* Content */}
