@@ -12,7 +12,7 @@ const testimonialsData = [
     role: 'Building new bedroom',
     rating: 4,
     text: 'Fantastic experience with this renovation team. They turned our small bedroom into a beautiful, functional space.',
-    image: require('@/assets/images/crafted/crafted1.jpg'),
+    image: require('@/assets/images/testimonials/testimonials1.png'),
   },
   {
     id: 2,
@@ -34,7 +34,17 @@ const testimonialsData = [
 
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
   const scrollRef = useRef(null);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -62,10 +72,13 @@ const Testimonials = () => {
         <div className={styles.sliderContainer}>
           <div
             className={styles.slider}
-            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+            style={{ transform: `translateX(-${currentIndex * (isMobile ? 100 : 75)}%)` }}
           >
-            {testimonialsData.map((testimonial) => (
-              <div key={testimonial.id} className={styles.slide}>
+            {testimonialsData.map((testimonial, index) => (
+              <div 
+                key={testimonial.id} 
+                className={`${styles.slide} ${index === currentIndex ? styles.active : ''}`}
+              >
                 <div className={styles.card}>
                   <div className={styles.imageWrapper}>
                     <Image

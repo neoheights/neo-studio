@@ -4,7 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import styles from './LegacyOfDesign.module.scss';
 import { usePopup } from '../PopupProvider';
-import thumbnailImg from '@/assets/images/crafted/crafted1.jpg';
+import thumbnailImg from '@/assets/images/legacyOfDesign/legacyOfDesign.png';
 
 const LegacyOfDesign = () => {
   const { openPopup } = usePopup();
