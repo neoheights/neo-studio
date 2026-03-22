@@ -27,7 +27,7 @@ export default function BlogPage() {
         className="whatsappFloat"
       >
         <a
-          href="https://wa.me/919972283300?text=Hello%20I%20am%20interested%20in%20your%20services"
+          href="https://wa.me/919972283300?text=Hi%20Neo%20Studio%20team,%20I%E2%80%99m%20interested%20in%20designing%20my%20home.%0A%0AName:%0AProperty%20Type%20(2%20BHK%20/%203%20BHK%20/%20Villa%20/%20Other):%0ACity%20%26%20Location:%0AApproximate%20Possession%20Date:%0AHow%20did%20you%20hear%20about%20us:%0A%0APlease%20help%20me%20with%20a%20free%20design%20consultation%20and%20quotation."
           target="_blank"
           rel="noopener noreferrer"
         >
