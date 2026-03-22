@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useRouter, usePathname } from 'next/navigation';
 import { X, ChevronRight } from 'lucide-react';
 import styles from './header.module.scss';
 import Image from 'next/image';
@@ -9,9 +10,17 @@ import Image from 'next/image';
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
 
   const scrollToSection = (id) => {
     setIsDrawerOpen(false); // For mobile screens, close the navbar while clicking navbar element
+    
+    if (pathname !== '/') {
+      router.push(`/#${id}`);
+      return;
+    }
+
     const element = document.getElementById(id);
     if (!element) return;
 
@@ -25,6 +34,23 @@ export default function Header() {
       top: offsetPosition,
       behavior: "smooth",
     });
+  };
+
+  const handleNavClick = (link) => {
+    if (link.href === '/blogs') {
+      setIsDrawerOpen(false);
+      router.push('/blogs');
+    } else {
+      scrollToSection(link.href);
+    }
+  };
+
+  const handleLogoClick = () => {
+    if (pathname === '/') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      router.push('/');
+    }
   };
 
   useEffect(() => {
@@ -48,13 +74,13 @@ export default function Header() {
     { name: 'Home', href: 'home' },
     { name: 'Projects', href: 'projects' },
     { name: 'About', href: 'about' },
-    { name: 'Services', href: 'services' },
-    // { name: 'Testimonials', href: '/testimonials' },
+    { name: 'What we do', href: 'services' },
+    { name: 'Blogs', href: '/blogs' },
     { name: 'Contact', href: 'contact' },
   ];
 
   // Desktop nav usually shows fewer items
-  const desktopNavLinks = navLinks.filter(link => ['Projects', 'About', 'Services', 'Contact'].includes(link.name));
+  const desktopNavLinks = navLinks.filter(link => ['Projects', 'About', 'What we do', 'Blogs', 'Contact'].includes(link.name));
 
   return (
     <>
@@ -65,13 +91,15 @@ export default function Header() {
           className={`${styles.logo} ${isScrolled ? styles.logoOpen : ''}`}
           width={200}
           height={200}
+          onClick={handleLogoClick}
+          style={{ cursor: 'pointer' }}
         />
 
         <div className={styles.headerNavbar}>
           <nav className={styles.navDesktop}>
             {desktopNavLinks.map((link) => (
-              <a key={link.name}  >
-                <span role="presentation" onClick={() => scrollToSection(link.name.toLowerCase())}>{link.name}</span>
+              <a key={link.name} className={styles.navItem} >
+                <span role="presentation" onClick={() => handleNavClick(link)}>{link.name}</span>
               </a>
             ))}
           </nav>
@@ -93,7 +121,7 @@ export default function Header() {
       {/* Drawer Menu */}
       <div className={`${styles.drawer} ${isDrawerOpen ? styles.open : ''}`}>
         <div className={styles.drawerHeader}>
-          <div className={styles.drawerLogo}>
+          <div className={styles.drawerLogo} onClick={handleLogoClick} style={{ cursor: 'pointer' }}>
             <Image
               src={require('@/assets/images/logo.png')}
               alt="Neo_studio"
@@ -113,7 +141,7 @@ export default function Header() {
 
         <nav className={styles.drawerNav}>
           {navLinks.map((link) => (
-            <a key={link.name} onClick={() => scrollToSection(link.href)}>
+            <a key={link.name} onClick={() => handleNavClick(link)}>
               {link.name}
               <ChevronRight className={styles.arrow} size={20} />
             </a>
