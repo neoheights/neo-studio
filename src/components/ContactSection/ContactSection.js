@@ -70,7 +70,7 @@ const ContactSection = ({ handleClose }) => {
   };
 
   const propertySizes = [
-    "1 BHK", "2 BHK", "3 BHK", "4 BHK", "5 BHK", "Villa", "Plot", "Other"
+    "1 BHK", "2 BHK", "3 BHK", "4 BHK", "5 BHK", "Villa", "Other"
   ];
 
   const propertyLocations = [
