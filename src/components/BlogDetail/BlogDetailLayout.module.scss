@@ -1,0 +1,31 @@
+.articleWrapper {
+  background: #fff;
+  min-height: 100vh;
+}
+
+.bodyContainer {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.bodyGrid {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+.mainContent {
+  flex: 1;
+  min-width: 0;
+}
+
+@media (max-width: 768px) {
+  .bodyContainer {
+    padding: 0 20px;
+  }
+
+  .bodyGrid {
+    gap: 0;
+  }
+}

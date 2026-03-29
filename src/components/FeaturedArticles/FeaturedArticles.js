@@ -13,7 +13,8 @@ const featuredPosts = [
     date: 'March 1, 2026',
     readTime: '8 min read',
     image: require('@/assets/images/blogs/main/residential.jpg'),
-    isMain: true
+    isMain: true,
+    slug: 'luxury-3bhk'
   },
   {
     id: 2,
@@ -23,7 +24,9 @@ const featuredPosts = [
     date: 'Feb 28, 2026',
     readTime: '5 min read',
     image: require('@/assets/images/blogs/main/commercial.jpg'),
-    isMain: false
+    isMain: false,
+    // slug: 'modern-office-trends'
+    slug: ''
   },
   {
     id: 3,
@@ -33,9 +36,17 @@ const featuredPosts = [
     date: 'Feb 26, 2026',
     readTime: '6 min read',
     image: require('@/assets/images/blogs/main/kitchen.jpg'),
-    isMain: false
+    isMain: false,
+    // slug: 'functional-kitchen-excellence'
+    slug: ''
   }
 ];
+
+const handleNavigate = (slug) => {
+  if (slug !== "") {
+    window.location.href = `/blogs/${slug}`;
+  }
+};
 
 const FeaturedArticles = () => {
   const mainPost = featuredPosts.find(p => p.isMain);
@@ -50,7 +61,7 @@ const FeaturedArticles = () => {
 
       <div className={styles.gridContainer}>
         <div className={styles.mainArticle}>
-          <div className={styles.card}>
+          <div className={styles.card} onClick={() => handleNavigate(mainPost.slug)}>
             <Image src={mainPost.image} alt={mainPost.title} className={styles.image} layout="fill" objectFit="cover" />
             <div className={styles.overlay}></div>
             <div className={styles.cardContent}>
@@ -68,7 +79,7 @@ const FeaturedArticles = () => {
 
         <div className={styles.secondaryArticles}>
           {secondaryPosts.map(post => (
-            <div key={post.id} className={styles.secondaryCard}>
+            <div key={post.id} className={styles.secondaryCard} onClick={() => handleNavigate(post.slug)}>
               <div className={styles.card}>
                 <Image src={post.image} alt={post.title} className={styles.image} layout="fill" objectFit="cover" />
                 <div className={styles.overlay}></div>

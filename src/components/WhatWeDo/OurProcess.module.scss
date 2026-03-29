@@ -1,0 +1,114 @@
+.processSection {
+  padding: 100px 0;
+  background-color: #fff;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.heading {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 16px;
+}
+
+.subheading {
+  font-size: 1.125rem;
+  color: #666;
+}
+
+.stepsContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50px;
+    left: 100px;
+    right: 100px;
+    height: 1px;
+    background: #eee;
+    z-index: 1;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+}
+
+.stepCard {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.largeNum {
+  font-size: 4rem;
+  font-weight: 800;
+  color: rgba(214, 222, 41, 0.2);
+  line-height: 1;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+}
+
+.content {
+  padding: 0 10px;
+}
+
+.stepTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 12px;
+}
+
+.stepDesc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .processSection {
+    padding: 60px 0;
+  }
+
+  .header {
+    margin-bottom: 40px;
+  }
+
+  .heading {
+    font-size: 2.25rem;
+  }
+
+  .stepsContainer {
+    flex-direction: column;
+    gap: 40px;
+    text-align: left;
+  }
+
+  .stepCard {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    text-align: left;
+  }
+
+  .largeNum {
+    font-size: 3rem;
+    margin-bottom: 0;
+  }
+}

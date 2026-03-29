@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import { ArrowRight, MessageCircle, PenTool, Truck, Key } from 'lucide-react';
 import styles from './WhyChooseUs.module.scss';
+import awardImage from '@/assets/images/awardImage.png';
 
 const WhyChooseUs = () => {
   const features = [
@@ -37,9 +38,9 @@ const WhyChooseUs = () => {
         <h2 className={styles.heading}>Why To Choose Us?</h2>
         <div className={styles.descriptionBlock}>
           <p className={styles.description}>
-            We at The Neo Studio plan your interior project from its conception to completion. 
-            Our experienced creative design consultants will undertake your needs to understand 
-            an intensive functional requirement on site level. We'll gain a thorough understanding 
+            We at The Neo Studio plan your interior project from its conception to completion.
+            Our experienced creative design consultants will undertake your needs to understand
+            an intensive functional requirement on site level. We'll gain a thorough understanding
             of the intricacies and specific needs of your interiors.
           </p>
           <a href="#" className={styles.learnMore}>
@@ -66,6 +67,15 @@ const WhyChooseUs = () => {
             <h3 className={styles.cardTitle}>{feature.title}</h3>
           </div>
         ))}
+      </div>
+
+      <div className={styles.awardImageWrapper}>
+        <Image
+          src={awardImage}
+          alt="Award Image"
+          className={styles.awardImage}
+          priority
+        />
       </div>
     </section>
   );

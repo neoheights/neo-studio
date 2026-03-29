@@ -37,9 +37,9 @@ export default function Header() {
   };
 
   const handleNavClick = (link) => {
-    if (link.href === '/blogs') {
+    if (link.href.startsWith('/')) {
       setIsDrawerOpen(false);
-      router.push('/blogs');
+      router.push(link.href);
     } else {
       scrollToSection(link.href);
     }
@@ -74,7 +74,7 @@ export default function Header() {
     { name: 'Home', href: 'home' },
     { name: 'Projects', href: 'projects' },
     { name: 'About', href: 'about' },
-    { name: 'What we do', href: 'services' },
+    { name: 'What we do', href: '/what-we-do' },
     { name: 'Blogs', href: '/blogs' },
     { name: 'Contact', href: 'contact' },
   ];

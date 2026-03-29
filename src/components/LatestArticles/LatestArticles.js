@@ -3,6 +3,7 @@
 import React from 'react';
 import styles from './LatestArticles.module.scss';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const latestPosts = [
   {
@@ -12,7 +13,8 @@ const latestPosts = [
     description: 'Discover affordable ways to create a luxurious spa-like bathroom experience with smart design choices and quality fixtures.',
     date: 'Feb 25, 2026',
     readTime: '7 min read',
-    image: require('@/assets/images/blogs/main/bathroom.png')
+    image: require('@/assets/images/blogs/main/bathroom.png'),
+    slug: 'spa-like-bathroom'
   },
   {
     id: 2,
@@ -21,7 +23,8 @@ const latestPosts = [
     description: 'Essential questions every homeowner should consider before starting their renovation journey to ensure success.',
     date: 'Feb 24, 2026',
     readTime: '6 min read',
-    image: require('@/assets/images/blogs/main/improvement.png')
+    image: require('@/assets/images/blogs/main/improvement.png'),
+    slug: 'renovation-questions'
   },
   {
     id: 3,
@@ -30,7 +33,8 @@ const latestPosts = [
     description: "Design tips for crafting a welcoming and functional living space that's perfect for hosting friends and family.",
     date: 'Feb 26, 2026',
     readTime: '5 min read',
-    image: require('@/assets/images/blogs/main/living.png')
+    image: require('@/assets/images/blogs/main/living.png'),
+    slug: 'perfect-living-room'
   },
   {
     id: 4,
@@ -39,7 +43,8 @@ const latestPosts = [
     description: 'Maximize every inch of your 2 BHK flat with clever storage solutions and multi-functional furniture pieces.',
     date: 'Feb 22, 2026',
     readTime: '8 min read',
-    image: require('@/assets/images/blogs/main/residential_latest.png')
+    image: require('@/assets/images/blogs/main/residential_latest.png'),
+    slug: 'small-space-2bhk'
   },
   {
     id: 5,
@@ -48,7 +53,8 @@ const latestPosts = [
     description: 'Explore the latest kitchen design trends that combine beauty with ergonomic functionality for the modern home.',
     date: 'Feb 21, 2026',
     readTime: '6 min read',
-    image: require('@/assets/images/blogs/main/kitchen.jpg')
+    image: require('@/assets/images/blogs/main/kitchen.jpg'),
+    slug: 'modern-kitchen-layouts'
   },
   {
     id: 6,
@@ -57,7 +63,8 @@ const latestPosts = [
     description: 'How contemporary commercial spaces are being redesigned to support hybrid work models and employee wellbeing.',
     date: 'Feb 20, 2026',
     readTime: '7 min read',
-    image: require('@/assets/images/blogs/main/commercial.jpg')
+    image: require('@/assets/images/blogs/main/commercial.jpg'),
+    slug: 'office-design-trends'
   },
   {
     id: 7,
@@ -66,7 +73,8 @@ const latestPosts = [
     description: 'A comprehensive guide to choosing environmentally responsible materials for your next interior design project.',
     date: 'Feb 19, 2026',
     readTime: '9 min read',
-    image: require('@/assets/images/blogs/main/residential.jpg')
+    image: require('@/assets/images/blogs/main/residential.jpg'),
+    slug: 'sustainable-materials'
   }
 ];
 
@@ -80,7 +88,7 @@ const LatestArticles = () => {
 
       <div className={styles.postsList}>
         {latestPosts.map((post) => (
-          <article key={post.id} className={styles.postCard}>
+          <Link key={post.id} href={`/blogs/${post.slug}`} className={styles.postCard}>
             <div className={styles.imageWrapper}>
               <Image src={post.image} alt={post.title} layout="fill" objectFit="cover" className={styles.postImage} />
             </div>
@@ -94,7 +102,7 @@ const LatestArticles = () => {
                 <span>{post.readTime}</span>
               </div>
             </div>
-          </article>
+          </Link>
         ))}
       </div>
 

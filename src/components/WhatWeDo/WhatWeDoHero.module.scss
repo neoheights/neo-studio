@@ -1,0 +1,83 @@
+.heroSection {
+  position: relative;
+  height: 90vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  background-image: url('../../assets/images/whatWeDo/whatWeDo.jpg'); // Using existing bg image as placeholder/reference
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 1;
+  }
+}
+
+.container {
+  width: 90%;
+  // max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.content {
+  max-width: 700px;
+}
+
+.title {
+  font-size: clamp(2.5rem, 3vw, 3.5rem);
+  font-weight: 500;
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+
+.description {
+  font-size: clamp(1rem, 1vw, 1.25rem);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 20px;
+}
+
+.ctaButton {
+  background-color: #D4D433; // Yellow/Lime
+  color: #000;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform 0.2s, background-color 0.2s;
+
+  // Match image style: black border, maybe box shadow
+  border: 2.6px solid #000000;
+  box-shadow: 4px 4px 0px #000;
+
+  &:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px #000;
+  }
+
+  &:active {
+    transform: translate(0, 0);
+    box-shadow: 2px 2px 0px #000;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    height: 80vh;
+  }
+
+  .content {
+    text-align: center;
+    margin: 0 auto;
+  }
+}
