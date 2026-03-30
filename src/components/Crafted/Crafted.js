@@ -7,9 +7,9 @@ import Image from 'next/image';
 import { usePopup } from '../PopupProvider';
 
 const dummyImages = [
-  require('@/assets/images/crafted/crafted1.jpg'),
-  require('@/assets/images/crafted/crafted2.jpg'),
-  require('@/assets/images/crafted/crafted3.jpg')
+  require('@/assets/images/crafted/residential_new.jpg'),
+  require('@/assets/images/crafted/living_room_new.jpg'),
+  require('@/assets/images/crafted/kitchen_new.jpg')
 ];
 
 export default function Crafted() {

@@ -46,7 +46,7 @@ const ContentBlock = ({ block }) => {
           {block.content.map((item, i) => (
             <li key={i} className={styles.bulletItem}>
               <span className={styles.bulletDot} />
-              {item}
+              <p>{item}</p>
             </li>
           ))}
         </ul>

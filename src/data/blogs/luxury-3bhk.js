@@ -1,8 +1,8 @@
 const blogData = {
   slug: 'luxury-3bhk',
   title: 'Luxury 3 BHK Interior Design: Creating Timeless Elegance',
-  subtitle: 'Discover the latest trends, expert tips, and timeless design principles from our team of interior designers in Bangalore.',
-  heroImage: require('@/assets/images/blogs/main/residential.jpg'),
+  subtitle: 'Discover the latest trends, expert tips, and timeless design principles from our team of interior designers in Bangalore. Transform your space with insights from our luxury 2 BHK and 3 BHK interior design projects.',
+  heroImage: require('@/assets/images/blogs/3bhk/3bhk_banner.jpg'),
   date: 'March 1, 2026',
   readTime: '8 min read',
   category: 'Residential',
@@ -23,8 +23,8 @@ const blogData = {
   ],
   content: {
     intro: [
-      'In the world of interior design, creating a luxury 3 BHK apartment requires a delicate balance between aesthetics, functionality, and personal expression. As premier interior designers in Bangalore, we\'ve mastered the art of transforming spacious apartments into sophisticated sanctuaries that stand the test of time.',
-      'Whether you\'re renovating an existing space or designing a new 3 BHK flat interior from scratch, this comprehensive guide will walk you through the essential elements that define timeless elegance in residential design.',
+      "In the world of interior design, creating a luxury 3 BHK apartment requires a delicate balance between aesthetics, functionality, and personal expression. As premier interior designers in Bangalore, we've mastered the art of transforming spacious apartments into sophisticated sanctuaries that stand the test of time.",
+      "Whether you're renovating an existing space or designing a new 3 BHK flat interior from scratch, this comprehensive guide will walk you through the essential elements that define timeless elegance in residential design."
     ],
     sections: [
       {
@@ -41,7 +41,7 @@ const blogData = {
           },
           {
             type: 'image',
-            content: require('@/assets/images/blogs/main/residential.jpg'),
+            content: require('@/assets/images/blogs/3bhk/3bhk_1.jpg'),
             caption: 'A beautifully designed living space showcasing timeless elegance and modern comfort',
           },
         ],
@@ -52,7 +52,7 @@ const blogData = {
         sectionContent: [
           {
             type: 'paragraph',
-            content: 'Timeless interiors rely on a sophisticated color palette that won\'t feel dated in five years. Our approach at Neo Studio centers around three key principles:',
+            content: "Timeless interiors rely on a sophisticated color palette that won't feel dated in five years. Our approach at Neo Studio centers around three key principles:",
           },
           {
             type: 'highlight',
@@ -83,7 +83,7 @@ const blogData = {
           },
           {
             type: 'paragraph',
-            content: 'Invest in a statement piece—whether it\'s a designer sofa, an oversized artwork, or an architectural lighting fixture. This becomes your room\'s focal point, anchoring the entire design scheme.',
+            content: "Invest in a statement piece—whether it's a designer sofa, an oversized artwork, or an architectural lighting fixture. This becomes your room's focal point, anchoring the entire design scheme.",
           },
           {
             type: 'sub-title',
@@ -91,11 +91,11 @@ const blogData = {
           },
           {
             type: 'paragraph',
-            content: 'The master bedroom in a 3 BHK flat interior design should feel like a five-star hotel suite. Layer your lighting with ambient, task, and accent options. Include blackout curtains for quality sleep, and consider a seating area if space permits.',
+            content: "The master bedroom in a 3 BHK flat interior design should feel like a five-star hotel suite. Layer your lighting with ambient, task, and accent options. Include blackout curtains for quality sleep, and consider a seating area if space permits.",
           },
           {
             type: 'image',
-            content: require('@/assets/images/blogs/main/living.png'),
+            content: require('@/assets/images/blogs/3bhk/3bhk_2.jpg'),
             caption: 'Master bedroom featuring layered lighting and luxurious materials',
           },
         ],
@@ -110,7 +110,7 @@ const blogData = {
           },
           {
             type: 'paragraph',
-            content: 'We recommend a combination of closed and open shelving—closed cabinets for everyday items, and open shelves for displaying beautiful dishware. Quartz or granite countertops offer durability, while a tile backsplash adds personality without requiring frequent updates.',
+            content: "We recommend a combination of closed and open shelving—closed cabinets for everyday items, and open shelves for displaying beautiful dishware. Quartz or granite countertops offer durability, while a tile backsplash adds personality without requiring frequent updates.",
           },
           {
             type: 'quote',
@@ -125,11 +125,11 @@ const blogData = {
         sectionContent: [
           {
             type: 'paragraph',
-            content: 'Nothing transforms a space quite like thoughtful lighting design. In Bangalore\'s climate, you\'re blessed with abundant natural light during the day, but evenings require a carefully orchestrated lighting plan.',
+            content: "Nothing transforms a space quite like thoughtful lighting design. In Bangalore's climate, you're blessed with abundant natural light during the day, but evenings require a carefully orchestrated lighting plan.",
           },
           {
             type: 'paragraph',
-            content: 'Layer three types of lighting in each room: ambient (overhead fixtures), task (reading lamps, under-cabinet lights), and accent (highlighting artwork or architectural features). Install dimmers wherever possible to adjust the mood throughout the day.',
+            content: "Layer three types of lighting in each room: ambient (overhead fixtures), task (reading lamps, under-cabinet lights), and accent (highlighting artwork or architectural features). Install dimmers wherever possible to adjust the mood throughout the day.",
           },
         ],
       },
@@ -139,11 +139,11 @@ const blogData = {
         sectionContent: [
           {
             type: 'paragraph',
-            content: 'One of the biggest challenges in 3 BHK flat interior design is creating adequate storage without sacrificing aesthetics. Built-in wardrobes with floor-to-ceiling doors maximize vertical space while maintaining clean lines.',
+            content: "One of the biggest challenges in 3 BHK flat interior design is creating adequate storage without sacrificing aesthetics. Built-in wardrobes with floor-to-ceiling doors maximize vertical space while maintaining clean lines.",
           },
           {
             type: 'paragraph',
-            content: 'Consider furniture that serves dual purposes: ottomans with hidden storage, beds with drawers underneath, and coffee tables with shelving. These solutions keep clutter at bay while maintaining the elegant minimalism that defines luxury interiors.',
+            content: "Consider furniture that serves dual purposes: ottomans with hidden storage, beds with drawers underneath, and coffee tables with shelving. These solutions keep clutter at bay while maintaining the elegant minimalism that defines luxury interiors.",
           },
         ],
       },
@@ -153,11 +153,11 @@ const blogData = {
         sectionContent: [
           {
             type: 'paragraph',
-            content: 'Creating timeless elegance in your 3 BHK interior design isn\'t about following every trend—it\'s about understanding fundamental design principles and adapting them to your lifestyle. As interior designers in Bangalore, we\'ve seen firsthand how investing in quality over quantity, choosing classic over trendy, and prioritizing functionality alongside beauty creates homes that feel fresh for decades.',
+            content: "Creating timeless elegance in your 3 BHK interior design isn't about following every trend—it's about understanding fundamental design principles and adapting them to your lifestyle. As interior designers in Bangalore, we've seen firsthand how investing in quality over quantity, choosing classic over trendy, and prioritizing functionality alongside beauty creates homes that feel fresh for decades.",
           },
           {
             type: 'paragraph',
-            content: 'Remember, your home should tell your story. Use these guidelines as a foundation, but don\'t be afraid to infuse your personality through art, textiles, and cherished objects. The most beautiful rooms are those that reflect the people who live in them.',
+            content: "Remember, your home should tell your story. Use these guidelines as a foundation, but don't be afraid to infuse your personality through art, textiles, and cherished objects. The most beautiful rooms are those that reflect the people who live in them.",
           },
         ],
       },

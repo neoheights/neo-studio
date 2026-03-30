@@ -4,6 +4,7 @@ import Footer from '@/components/Footer/Footer';
 import BlogDetailLayout from '@/components/BlogDetail/BlogDetailLayout';
 
 import luxury3bhkData from '@/data/blogs/luxury-3bhk';
+import LegacyOfDesign from '@/components/LegacyOfDesign/LegacyOfDefsign';
 
 const blogRegistry = {
   'luxury-3bhk': luxury3bhkData,
@@ -32,6 +33,7 @@ export default async function BlogDetailPage({ params }) {
     <main>
       <Header />
       <BlogDetailLayout blog={blog} />
+      <LegacyOfDesign />
       <Footer />
     </main>
   );
